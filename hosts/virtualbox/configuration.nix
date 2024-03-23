@@ -18,6 +18,7 @@
   users.users = {
     # FIXME: Replace with your username
     nixuser = {
+      system = {inherit system};
       initialPassword = "password";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [

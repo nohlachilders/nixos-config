@@ -39,6 +39,7 @@
   networking.networkmanager.enable = true;
   time.timeZone = "America/Los_Angeles";
 
+  system = "x86_64-linux";
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
 }
