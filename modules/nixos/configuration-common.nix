@@ -33,7 +33,8 @@
 
 
   # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = true;
+  boot.loader.useOSProber = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
