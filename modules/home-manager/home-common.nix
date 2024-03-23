@@ -24,7 +24,9 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel"];
-    };
+      system = "x86_64-linux";
+      # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+      home.stateVersion = "23.05";
   };
 
   nixpkgs = {
@@ -67,7 +69,5 @@
   systemd.user.startServices = "sd-switch";
 
 
-  system = "x86_64-linux";
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+
 }
