@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "nix time nix time";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
@@ -22,12 +22,12 @@
       "aarch64-linux"
       "i686-linux"
       "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
     ];
+
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
   in {
     # Your custom packages
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -39,10 +39,10 @@
 
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      default = nixpkgs.lib.nixosSystem {
+      virtualbox = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/virtualbox/configuration.nix
         ];
       };
     };
