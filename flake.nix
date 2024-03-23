@@ -42,12 +42,14 @@
     nixosConfigurations = {
       virtualbox = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
+        system = "x86_64-linux"
         modules = [
           ./hosts/virtualbox/configuration.nix
         ];
       };
       default = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
+        system = "x86_64-linux"
         modules = [
         ];
       };
