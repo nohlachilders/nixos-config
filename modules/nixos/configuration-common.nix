@@ -14,7 +14,7 @@
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
-    nixuser = {
+    nohlachilders = {
       initialPassword = "password";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
@@ -22,14 +22,6 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel"];
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      nixuser = {import homeManagerModules.home-common};
-    };
   };
 
   environment.systemPackages =
