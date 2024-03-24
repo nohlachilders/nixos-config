@@ -12,6 +12,9 @@
     home-manager-modules = import ./home-manager
   ];
 
+  environment.systemPackages =
+    [ inputs.home-manager.packages.${pkgs.system}.default ];
+
   nixpkgs = {
     overlays = [
       outputs.overlays.additions
