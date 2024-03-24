@@ -37,7 +37,7 @@
 
 
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = ${hardware_config.fileSystems."/".device};
+  boot.loader.grub.device = ${fileSystems."/".device};
   boot.loader.grub.efiInstallAsRemovable;
   boot.loader.useOSProber = true;
 
