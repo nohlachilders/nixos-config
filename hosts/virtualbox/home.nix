@@ -17,4 +17,8 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
+home = {
+  username = "nohlachilders";
+  system.stateVersion = "23.05";
+};
 }
