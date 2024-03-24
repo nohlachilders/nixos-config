@@ -9,8 +9,28 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    home-manager-modules = import ./home-manager
   ];
+
+  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  users.users = {
+    # FIXME: Replace with your username
+    nixuser = {
+      initialPassword = "password";
+      isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+      ];
+      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
+      extraGroups = ["wheel"];
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      nixuser = import ../home-manager;
+    };
+  };
 
   environment.systemPackages =
     [ inputs.home-manager.packages.${pkgs.system}.default ];
