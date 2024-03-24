@@ -28,7 +28,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      nixuser = import homeManagerModules.home-common;
+      nixuser = {import homeManagerModules.home-common};
     };
   };
 
