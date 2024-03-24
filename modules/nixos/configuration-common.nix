@@ -9,7 +9,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    hardwareModules.hardware_config
+    hardware_config
   ];
 
   environment.systemPackages =

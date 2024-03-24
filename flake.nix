@@ -36,7 +36,7 @@
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
-    hardwareModules = import ./hardware;
+    hardware-config = import ./hardware;
 
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
