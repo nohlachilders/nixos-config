@@ -9,6 +9,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    hardwareModules
   ];
 
   environment.systemPackages =
@@ -36,6 +37,8 @@
 
 
   boot.loader.grub.enable = true;
+  boot.loader.grub.device = ${hardwareModules.hardware_config.fileSystems."/".device};
+  boot.loader.grub.efiInstallAsRemovable;
   boot.loader.useOSProber = true;
 
   networking.networkmanager.enable = true;
