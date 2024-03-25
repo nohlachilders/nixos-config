@@ -32,14 +32,6 @@
     };
   };
 
-  # Add stuff for your user as you see fit:
-  programs = {
-    home-manager.enable = true;
-    firefox.enable = true;
-    hyprland.enable = true;
-    alacritty.enable = true;
-  };
-
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

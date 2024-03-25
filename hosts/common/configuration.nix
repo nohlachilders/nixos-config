@@ -32,6 +32,14 @@
     ranger
   ];
 
+  # Add stuff for your user as you see fit:
+  programs = {
+    home-manager.enable = true;
+    firefox.enable = true;
+    hyprland.enable = true;
+    alacritty.enable = true;
+  };
+
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
