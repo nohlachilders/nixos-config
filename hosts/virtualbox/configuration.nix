@@ -13,13 +13,14 @@
 
   networking.hostName = "nixos";
 
-  users.defaultUserShell =pkgs.zshell;
   users.users = {
     # FIXME: Replace with your username
     nohlachilders = {
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["networkmanager" "wheel" ];
+
+      shell = pkgs.zshell;
     };
   };
 
