@@ -37,6 +37,7 @@
     home-manager.enable = true;
     firefox.enable = true;
     hyprland.enable = true;
+    alacritty.enable = true;
   };
 
 
