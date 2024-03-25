@@ -9,7 +9,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ./hardware-config.nix
+    ./hardware-configuration.nix
   ];
 
   home-manager = import ./home.nix

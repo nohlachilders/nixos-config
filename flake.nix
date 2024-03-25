@@ -36,13 +36,13 @@
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
-    hardware-config = import ./hardware;
 
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       virtualbox = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+          ./hosts/common/configuration.nix
           ./hosts/virtualbox/configuration.nix
         ];
       };
