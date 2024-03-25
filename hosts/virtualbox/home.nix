@@ -11,7 +11,7 @@
   # You can import other home-manager modules here
   imports = [
     # ./nvim.nix
-    outputs.homeManagerModules.common
+    outputs.homeManagerModules
   ];
 
   # Add stuff for your user as you see fit:
