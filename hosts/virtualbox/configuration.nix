@@ -11,6 +11,8 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  virtualization.virtualbox.guest.enable = true;
+
   networking.hostName = "nixos";
 
   users.users = {
