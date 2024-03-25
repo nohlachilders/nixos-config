@@ -34,15 +34,11 @@
 
   # Add stuff for your user as you see fit:
   programs = {
-    neovim.enable = true;
     home-manager.enable = true;
-    git.enable = true;
-    zsh.enable = true;
     firefox.enable = true;
     hyprland.enable = true;
   };
 
-  pkgs.shell = zsh;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

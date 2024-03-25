@@ -26,9 +26,12 @@
     git
     wget
     ripgrep
+    zsh
+    tmux
+    neovim
+    ranger
   ];
 
-  pkgs.shell = zsh;
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
