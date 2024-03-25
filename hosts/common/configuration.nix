@@ -35,7 +35,7 @@
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.efiInstallAsRemovable;
+  boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.useOSProber = true;
 
   networking.networkmanager.enable = true;
