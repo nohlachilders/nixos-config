@@ -31,8 +31,11 @@
     neovim
     ranger
 
-    alacritty
-    rofi
+    kitty
+    wofi
+    dunst
+    libnotify
+    swww
   ];
 
   # Add stuff for your user as you see fit:
