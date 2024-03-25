@@ -32,10 +32,10 @@
   };
 
 
-  boot.loader= {
-    grub.enable = true;
-    grub.device = "/dev/sda";
-    grub.efiInstallAsRemovable = true;
+  boot.loader.grub= {
+    enable = true;
+    device = "/dev/sda";
+    efiInstallAsRemovable = true;
     useOSProber = true;
   };
 
