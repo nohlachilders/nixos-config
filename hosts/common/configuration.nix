@@ -33,7 +33,7 @@
 
 
   boot.loader= {
-    enable = true;
+    grub.enable = true;
     grub.device = "/dev/sda";
     grub.efiInstallAsRemovable = true;
     useOSProber = true;
