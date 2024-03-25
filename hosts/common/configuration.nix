@@ -42,5 +42,4 @@
   networking.networkmanager.enable = true;
   time.timeZone = "America/Los_Angeles";
 
-  system = "x86_64-linux";
 }
