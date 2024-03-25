@@ -12,7 +12,7 @@
     ./hardware-configuration.nix
   ];
 
-  home-manager = import ./home.nix
+  home-manager = import ./home.nix;
 
   nixpkgs = {
     overlays = [
