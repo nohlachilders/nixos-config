@@ -43,6 +43,7 @@
       nvidiaPatches = true;
       xwayland.enable = true;
     };
+    zsh.enable = true;
   };
 
   sound.enable = true;
