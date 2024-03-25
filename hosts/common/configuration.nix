@@ -12,8 +12,7 @@
     ./hardware-config.nix
   ];
 
-  environment.systemPackages =
-    [ inputs.home-manager.packages.${pkgs.system}.default ];
+  home-manager = import ./home.nix
 
   nixpkgs = {
     overlays = [
@@ -37,7 +36,7 @@
 
 
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = ${fileSystems."/".device};
+  boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.efiInstallAsRemovable;
   boot.loader.useOSProber = true;
 
