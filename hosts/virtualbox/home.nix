@@ -11,14 +11,15 @@
   # You can import other home-manager modules here
   imports = [
     # ./nvim.nix
+    homeManagerModules.common
   ];
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-home = {
-  username = "nohlachilders";
-  stateVersion = "23.05";
-};
+#home = {
+#  username = "nohlachilders";
+#  stateVersion = "23.05";
+#};
 }

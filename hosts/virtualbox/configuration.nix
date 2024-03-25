@@ -23,7 +23,7 @@
     };
   };
 
-
+  home-manager.users.nohlachilders = import ./home.nix
 
 
 }
