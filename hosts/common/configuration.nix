@@ -32,10 +32,12 @@
   };
 
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.useOSProber = true;
+  boot.loader= {
+    enable = true;
+    grub.device = "/dev/sda";
+    grub.efiInstallAsRemovable = true;
+    useOSProber = true;
+  };
 
   networking.networkmanager.enable = true;
   time.timeZone = "America/Los_Angeles";
