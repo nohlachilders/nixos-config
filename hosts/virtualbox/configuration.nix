@@ -13,7 +13,7 @@
 
   networking.hostName = "nixos";
 
-  user.defaultUserShell =pkgs.zshell;
+  users.defaultUserShell =pkgs.zshell;
   users.users = {
     # FIXME: Replace with your username
     nohlachilders = {
