@@ -12,8 +12,6 @@
     ./hardware-configuration.nix
   ];
 
-  home-manager = import ./home.nix;
-
   nixpkgs = {
     overlays = [
       outputs.overlays.additions
