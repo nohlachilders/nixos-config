@@ -46,12 +46,20 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           { programs.hyprland.enable = true; }
-          ./hosts/common/hardware-configuration.nix
-          ./hosts/common/configuration.nix
+          ./hardware-configuration.nix
           ./hosts/virtualbox/configuration.nix
         ];
       };
     };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      nohlachilders = import ./hosts/home.nix;
+    };
+  };
+
 
   };
 }

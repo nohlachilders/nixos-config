@@ -3,5 +3,6 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
-  hyprland-nvidia-compat = import ./hyprland-nvidia-compat.nix
+  hyprland-nvidia-compat = import ./hyprland-nvidia-compat.nix;
+  common = import ./common.nix;
 }
