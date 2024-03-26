@@ -57,7 +57,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      nohlachilders = import ./hosts/home.nix;
+      virtualbox = import ./hosts/virtualbox/home.nix;
     };
   };
 

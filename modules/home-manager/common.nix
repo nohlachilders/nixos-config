@@ -13,6 +13,10 @@
     # ./nvim.nix
   ];
 
+  home = {
+    username = "nohlachilders";
+    stateVersion = "23.05";
+  };
 
   nixpkgs = {
     # You can add overlays here
