@@ -9,7 +9,6 @@
 }: {
   imports = [
     #inputs.home-manager.nixosModules.home-manager
-    inputs.hyprland.nixosModules.default
   ];
 
   nixpkgs = {
@@ -42,9 +41,6 @@
   # Add stuff for your user as you see fit:
   programs = {
     firefox.enable = true;
-    hyprland = {
-      enable = true;
-    };
     zsh.enable = true;
   };
 

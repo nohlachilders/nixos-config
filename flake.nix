@@ -45,6 +45,7 @@
       virtualbox = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+          { programs.hyprland.enable = true; }
           ./hosts/common/hardware-configuration.nix
           ./hosts/common/configuration.nix
           ./hosts/virtualbox/configuration.nix
