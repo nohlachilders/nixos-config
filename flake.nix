@@ -42,7 +42,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       virtualbox = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs hyprland;};
         modules = [
           { programs.hyprland.enable = true; }
           ./hosts/common/hardware-configuration.nix
