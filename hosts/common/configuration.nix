@@ -9,6 +9,7 @@
 }: {
   imports = [
     #inputs.home-manager.nixosModules.home-manager
+    inputs.hyprland.nixosModules.default
   ];
 
   nixpkgs = {
@@ -16,7 +17,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      hyprland.nixosModules.default
     ];
     config = {
       allowUnfree = true;
