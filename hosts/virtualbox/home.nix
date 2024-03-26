@@ -12,6 +12,7 @@
   imports = [
     # ./nvim.nix
     outputs.homeManagerModules.common
+    inputs.hyprland.homeManagerModules.default
   ];
 
   # Add stuff for your user as you see fit:
