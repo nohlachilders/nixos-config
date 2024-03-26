@@ -9,6 +9,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hardware.url = "github:nixos/nixos-hardware";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -45,6 +47,7 @@
           ./hosts/common/hardware-configuration.nix
           ./hosts/common/configuration.nix
           ./hosts/virtualbox/configuration.nix
+          hyprland.nixosModules.default
         ];
       };
     };
