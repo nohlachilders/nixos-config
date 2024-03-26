@@ -44,6 +44,7 @@
     firefox.enable = true;
     hyprland = {
       enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-wlr;
     };
     zsh.enable = true;
   };
