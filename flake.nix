@@ -17,6 +17,7 @@
     self,
     nixpkgs,
     home-manager,
+    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -47,7 +48,6 @@
           ./hosts/common/hardware-configuration.nix
           ./hosts/common/configuration.nix
           ./hosts/virtualbox/configuration.nix
-          hyprland.nixosModules.default
         ];
       };
     };
