@@ -1,4 +1,5 @@
-# main OS config
+# This is your home-manager configuration file
+# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   outputs,
@@ -7,63 +8,32 @@
   pkgs,
   ...
 }: {
+  # You can import other home-manager modules here
   imports = [
-    #inputs.home-manager.nixosModules.home-manager
+    # ./nvim.nix
   ];
 
+
   nixpkgs = {
+    # You can add overlays here
     overlays = [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
     ];
+
+    # Configure your nixpkgs instance
     config = {
+      # Disable if you don't want unfree packages
       allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-    ripgrep
-    zsh
-    tmux
-    neovim
-    ranger
 
-    kitty
-    wofi
-    dunst
-    libnotify
-    swww
-  ];
+  # Nicely reload system units when changing configs
+  systemd.user.startServices = "sd-switch";
 
-  # Add stuff for your user as you see fit:
-  programs = {
-    firefox.enable = true;
-    zsh.enable = true;
-  };
-
-
-
-  # This will add each flake input as a registry
-  # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    auto-optimise-store = true;
-  };
-
-  boot.loader.grub= {
-    enable = true;
-    device = "/dev/sda";
-    useOSProber = true;
-  };
-
-  networking.networkmanager.enable = true;
-  time.timeZone = "America/Los_Angeles";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
 }
