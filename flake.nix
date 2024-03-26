@@ -48,6 +48,7 @@
           { programs.hyprland.enable = true; }
           ./hardware-configuration.nix
           ./hosts/virtualbox/configuration.nix
+          outputs.nixosModules.common
         ];
       };
     };
