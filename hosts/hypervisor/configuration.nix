@@ -13,6 +13,7 @@
 
   #virtualisation.virtualbox.guest.enable = true;
   virtualisation.hypervGuest.enable = true;
+  boot.loader.grub.device = "/dev/disk/by-uuid/6BF4-EA9C";
 
   programs.hyprland = {
     enable = true;
