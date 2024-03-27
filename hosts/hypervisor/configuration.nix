@@ -11,7 +11,9 @@
     #outputs.nixosModules.sway
   ];
 
+  boot.grub.kernelModules = ["hv_vmbus" "hv_storvsc"];
   #virtualisation.virtualbox.guest.enable = true;
+
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
