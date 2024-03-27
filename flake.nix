@@ -45,7 +45,6 @@
       hypervisor = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          { programs.hyprland.enable = true; }
           ./hardware-configuration.nix
           ./hosts/hypervisor/configuration.nix
           outputs.nixosModules.common
