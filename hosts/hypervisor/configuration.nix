@@ -11,8 +11,8 @@
     #outputs.nixosModules.sway
   ];
 
-  boot.kernelParams = ["video=hyperv_fb:800x600"];
   #virtualisation.virtualbox.guest.enable = true;
+  virtualisation.hypervGuest.enable = true;
 
   programs.hyprland = {
     enable = true;
