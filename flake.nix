@@ -49,6 +49,7 @@
           ./hardware-configuration.nix
           ./hosts/hypervisor/configuration.nix
           outputs.nixosModules.common
+          outputs.nixosModules.hyprland-nvidia-compat
         ];
       };
     };

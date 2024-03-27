@@ -9,7 +9,6 @@
 }: {
   imports = [
     #outputs.nixosModules.sway
-    outputs.nixosModules.hyprland-nvidia-compat
   ];
 
   #virtualisation.virtualbox.guest.enable = true;
