@@ -8,7 +8,7 @@
   ...
 }: {
   imports = [
-    outputs.nixosModules.common
+    outputs.nixosModules.sway
   ];
 
   virtualisation.virtualbox.guest.enable = true;
