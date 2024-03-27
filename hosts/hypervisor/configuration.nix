@@ -13,7 +13,9 @@
 
   #virtualisation.virtualbox.guest.enable = true;
   virtualisation.hypervGuest.enable = true;
-  boot.loader.grub.device = "/dev/disk/by-uuid/6BF4-EA9C";
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   programs.hyprland = {
     enable = true;
