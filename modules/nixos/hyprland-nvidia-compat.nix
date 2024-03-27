@@ -8,7 +8,6 @@
   ...
 }: {
   
-  programs.hyprland.enableNvidiaPatches = true;
 
   hardware.nvidia.modesetting.enable = true;
 
