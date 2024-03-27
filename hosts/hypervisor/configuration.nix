@@ -11,7 +11,6 @@
     #outputs.nixosModules.sway
   ];
 
-  boot.grub.kernelModules = ["hv_vmbus" "hv_storvsc"];
   boot.kernelParams = ["video=hyperv_fb:800x600"];
   #virtualisation.virtualbox.guest.enable = true;
 
