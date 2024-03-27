@@ -8,11 +8,11 @@
   ...
 }: {
   imports = [
-    outputs.nixosModules.sway
+    #outputs.nixosModules.sway
+    outputs.nixosModules.hyprland-nvidia-compat
   ];
 
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
+  #virtualisation.virtualbox.guest.enable = true;
 
   networking.hostName = "nixos";
 

@@ -42,12 +42,12 @@
 
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      virtualbox = nixpkgs.lib.nixosSystem {
+      hypervisor = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # { programs.hyprland.enable = true; }
+          { programs.hyprland.enable = true; }
           ./hardware-configuration.nix
-          ./hosts/virtualbox/configuration.nix
+          ./hosts/hypervisor/configuration.nix
           outputs.nixosModules.common
         ];
       };
@@ -57,7 +57,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      virtualbox = import ./hosts/virtualbox/home.nix;
+      hypervisor = import ./hosts/hypervisor/home.nix;
     };
   };
 
