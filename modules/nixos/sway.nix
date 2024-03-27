@@ -7,9 +7,9 @@
   ...
 }: {
   
-  environment.systemPackages = with pkgs; {
+  environment.systemPackages = with pkgs; [
     pkgs.swayfx
-  };
+  ];
 
 }
 
