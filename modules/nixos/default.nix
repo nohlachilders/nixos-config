@@ -5,5 +5,4 @@
   # my-module = import ./my-module.nix;
   common = import ./common.nix;
   hyprland-nvidia-compat = import ./hyprland-nvidia-compat.nix;
-  sway = import ./sway.nix;
 }

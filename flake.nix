@@ -45,10 +45,8 @@
       hypervisor = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          outputs.nixosModules.common
           ./hardware-configuration.nix
           ./hosts/hypervisor/configuration.nix
-          outputs.nixosModules.hyprland-nvidia-compat
         ];
       };
     };

@@ -24,7 +24,9 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
+
     git
+    lazygit
     wget
     ripgrep
     zsh
@@ -38,14 +40,6 @@
     libnotify
     swww
   ];
-
-  # Add stuff for your user as you see fit:
-  programs = {
-    firefox.enable = true;
-    zsh.enable = true;
-  };
-
-
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
