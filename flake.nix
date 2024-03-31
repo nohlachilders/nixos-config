@@ -51,14 +51,5 @@
       };
     };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      hypervisor = import ./hosts/hypervisor/home.nix;
-    };
-  };
-
-
   };
 }

@@ -10,15 +10,23 @@
   imports = [
     #outputs.nixosModules.sway
     outputs.nixosModules.common
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   #virtualisation.virtualbox.guest.enable = true;
   virtualisation.hypervGuest.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true; 
 
   networking.hostName = "nixos";
+
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
   users.users = {
     # FIXME: Replace with your username
@@ -30,13 +38,13 @@
       shell = pkgs.zsh;
     };
   };
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
   
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      nohlachilders = import ./home.nix;
+    };
+  };
 
 }
