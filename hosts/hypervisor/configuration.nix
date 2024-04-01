@@ -26,6 +26,10 @@
     enable = true;
     modules = [ pkgs.xorg.xf86videofbdev ]; 
     videoDrivers = [ "hyperv_fb" ]; 
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
   };
 
   # Enable OpenGL
