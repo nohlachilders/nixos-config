@@ -22,23 +22,6 @@
 
   networking.hostName = "nixos";
 
-  services.xserver = {
-    enable = true;
-    modules = [ pkgs.xorg.xf86videofbdev ]; 
-    videoDrivers = [ "hyperv_fb" ]; 
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-  };
-
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
