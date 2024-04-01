@@ -110,7 +110,7 @@ programs = {
 
       unbind f
       bind f display-popup -E "tms"
-      bind f display-popup -E "tms switch"
+      bind r display-popup -E "tms switch"
 
       set-option -g status-position top
       set-option -g status-style fg=gold,bg=black
