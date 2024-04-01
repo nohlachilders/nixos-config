@@ -73,7 +73,49 @@ programs = {
     '';
   };
 
-  tmux.enable = true;
+  tmux = {
+    enable = true;
+    extraConfig = ''
+      # leader
+      unbind C-b
+      set-option -g prefix C-a
+      bind-key C-a send-prefix
+
+      # split panes
+      bind - split-window -h
+      bind | split-window -v
+
+      # Vim style pane selection
+      unbind h
+      unbind j
+      unbind k
+      unbind l
+      unbind g
+      bind j next-window
+      bind k previous-window
+      bind -r h switch-client -p\; refresh-client -S
+      bind -r l switch-client -n\; refresh-client -S
+      bind-key -r g run-shell "tmux neww lazygit"
+      # Start windows and panes at 1, not 0
+      set -g base-index 1
+      set -g pane-base-index 1
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
+
+      unbind f
+      bind f display-popup -E "tms"
+      bind C-f display-popup -E "tms switch"
+
+      set-option -g status-position top
+      set-option -g status-style fg=gold,bg=black
+
+      set -g status-left ""
+      set -g status-right "tmux @ #S "
+      set-option -g default-shell /bin/zsh
+      set-window-option -g mode-keys vi
+    
+    '';
+  };
 };
 }
 
