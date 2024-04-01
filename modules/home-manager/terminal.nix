@@ -6,6 +6,12 @@
   pkgs,
   ...
 }: {
+  home.file = {
+    ".local/share/zsh/zsh-autosuggestions".source = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
+    ".local/share/zsh/zsh-fast-syntax-highlighting".source = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
+    ".local/share/zsh/nix-zsh-completions".source = "${pkgs.nix-zsh-completions}/share/zsh/plugins/nix";
+  };
+
 programs = {
   zsh = {
     enable = true;
@@ -53,6 +59,17 @@ programs = {
       setopt PROMPT_SUBST
       PROMPT=''\'''${vcs_info_msg_0_} %F{yellow}zsh @ %~ |>%f'
 
+      [ -f "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ] && \
+      source "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+      #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#${config.colorScheme.colors.base03}"
+      #bindkey '^ ' autosuggest-accept
+
+      [ -f "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
+      source "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+      [ -f "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh" ] && \
+      source "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh"
     '';
   };
 
