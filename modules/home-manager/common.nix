@@ -11,6 +11,7 @@
   # You can import other home-manager modules here
   imports = [
     # ./nvim.nix
+    ./terminal.nix
   ];
 
   home = {
@@ -36,10 +37,6 @@
     };
   };
 
-programs = {
-  zsh.enable = true;
-  tmux.enable = true;
-};
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
