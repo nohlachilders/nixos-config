@@ -14,7 +14,7 @@ programs = {
       bindkey -M viins jk vi-cmd-mode
       export VISUAL=nvim
       # Remove mode switching delay.
-      KEYTIMEOUT=5
+      KEYTIMEOUT=10
     '';
   };
 
