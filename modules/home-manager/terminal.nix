@@ -11,6 +11,7 @@ programs = {
     enable = true;
     shellAliases = {
       nixme = "sudo nixos-rebuild switch --flake";
+      ls = "ls --color=auto"
     };
     initExtra = ''
       bindkey -v
@@ -40,7 +41,18 @@ programs = {
       }
 
       precmd_functions+=(_fix_cursor)
-      echo "hi welcome to zsh lol"
+
+      if [ -z $TMUX ]
+      then
+          tmux attach -t defaultsession || tmux new -s defaultsession
+      fi
+
+      autoload -Uz vcs_info
+      precmd() { vcs_info }
+      zstyle ':vcs_info:git:*' check-for-changes true formats '[%b%u%c] '
+      setopt PROMPT_SUBST
+      PROMPT=''\'''${vcs_info_msg_0_} %F{yellow}zsh @ %~ |>%f'
+
     '';
   };
 
