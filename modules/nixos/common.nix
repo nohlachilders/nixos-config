@@ -36,7 +36,7 @@
 
     kitty
     wofi
-    dunst
+    mako
     libnotify
     swww
   ];
