@@ -104,14 +104,14 @@ programs = {
 
       unbind f
       bind f display-popup -E "tms"
-      bind C-f display-popup -E "tms switch"
+      bind r display-popup -E "tms switch"
 
       set-option -g status-position top
       set-option -g status-style fg=gold,bg=black
 
       set -g status-left ""
       set -g status-right "tmux @ #S "
-      set-option -g default-shell /bin/zsh
+      set-option -g default-shell zsh
       set-window-option -g mode-keys vi
     
     '';
