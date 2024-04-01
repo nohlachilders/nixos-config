@@ -20,7 +20,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "nomodeset" ];
 
+
   networking.hostName = "nixos";
+
+  services.xserver = {
+    enable = true;
+    modules = [ pkgs.xorg.xf86videofbdev ]; 
+    videoDrivers = [ "hyperv_fb" ]; 
+  };
 
   # Enable OpenGL
   hardware.opengl = {
