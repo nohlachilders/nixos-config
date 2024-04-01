@@ -28,6 +28,14 @@
     driSupport32Bit = true;
   };
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      nohlachilders = import ./home.nix;
+    };
+  };
+
   users.users = {
     # FIXME: Replace with your username
     nohlachilders = {
@@ -39,12 +47,6 @@
     };
   };
   
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      nohlachilders = import ./home.nix;
-    };
-  };
+
 
 }
