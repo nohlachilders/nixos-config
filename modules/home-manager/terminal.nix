@@ -63,7 +63,7 @@ programs = {
       source "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
       #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#''${config.colorScheme.colors.base03}"
-      #bindkey '^ ' autosuggest-accept
+      bindkey '^ ' autosuggest-accept
 
       [ -f "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
       source "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -104,14 +104,14 @@ programs = {
 
       unbind f
       bind f display-popup -E "tms"
-      bind r display-popup -E "tms switch"
+      bind f display-popup -E "tms switch"
 
       set-option -g status-position top
       set-option -g status-style fg=gold,bg=black
 
       set -g status-left ""
       set -g status-right "tmux @ #S "
-      set-option -g default-shell zsh
+      set-option -g default-shell ${pkgs.zsh}/bin/zsh
       set-window-option -g mode-keys vi
     
     '';
