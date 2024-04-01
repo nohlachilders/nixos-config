@@ -11,7 +11,7 @@ programs = {
     enable = true;
     shellAliases = {
       nixme = "sudo nixos-rebuild switch --flake";
-      ls = "ls --color=auto"
+      ls = "ls --color=auto";
     };
     initExtra = ''
       bindkey -v
