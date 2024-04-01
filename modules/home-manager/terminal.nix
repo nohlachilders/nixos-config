@@ -29,17 +29,18 @@ programs = {
             [[ ''${KEYMAP} = ''\'''\' ]] ||
             [[ ''$1 = 'beam' ]]; then
                     echo -ne '\e[5 q'
-     fi
+      fi
       }
-     zle -N zle-keymap-select
+      zle -N zle-keymap-select
 
-     # Use beam shape cursor on startup.
-     echo -ne '\e[5 q'
-     _fix_cursor() {
+      # Use beam shape cursor on startup.
+      echo -ne '\e[5 q'
+      _fix_cursor() {
          echo -ne '\e[5 q'
-     }
+      }
 
-     precmd_functions+=(_fix_cursor)
+      precmd_functions+=(_fix_cursor)
+      echo "hi welcome to zsh lol"
     '';
   };
 
