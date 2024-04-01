@@ -9,6 +9,9 @@
 programs = {
   zsh = {
     enable = true;
+    shellAliases = {
+      nixme = "sudo nixos-rebuild switch --flake";
+    };
     initExtra = ''
       bindkey -v
       bindkey -M viins jk vi-cmd-mode

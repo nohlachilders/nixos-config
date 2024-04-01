@@ -33,6 +33,7 @@
     tmux
     neovim
     ranger
+    fzf
 
     kitty
     wofi
