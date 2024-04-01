@@ -9,7 +9,6 @@
 programs = {
   zsh = {
     enable = true;
-    autosuggestion.enable = true;
     initExtra = ''
       bindkey -v
       bindkey -M viins jk vi-cmd-mode
