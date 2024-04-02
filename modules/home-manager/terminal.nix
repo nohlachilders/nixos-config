@@ -32,6 +32,7 @@ imports = [
       userEmail = "nohlachilders@github.com";
       userName = "Nohl Childers";
     };
+    gh.enable = true;
 
     zsh = {
       enable = true;
