@@ -45,6 +45,7 @@
   security.polkit.enable = true;
 
   programs.zsh.enable = true;
+  programs.ssh.startAgent = true;
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
