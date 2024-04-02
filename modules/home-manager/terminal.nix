@@ -142,7 +142,6 @@ imports = [
   };
 
   services = {
-    ssh-agent.enable = true;
   };
 
 }

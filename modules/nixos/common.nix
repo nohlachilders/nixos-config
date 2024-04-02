@@ -63,6 +63,10 @@
       "experimental-features = nix-command flakes";
   };
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+  };
+
   hardware ={
     opengl.enable = true;
   };
