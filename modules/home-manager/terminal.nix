@@ -32,8 +32,8 @@ programs = {
     initExtra = ''
       bindkey -v
       bindkey -M viins jk vi-cmd-mode
-      bindkey -M viins "^P" vi-history-search-backward
-      bindkey -M viins "^N" vi-history-search-forward
+      bindkey -M viins "^P" up-line-or-history
+      bindkey -M viins "^N" down-line-or-history
       export VISUAL=nvim
       # Remove mode switching delay.
       KEYTIMEOUT=10
