@@ -22,132 +22,126 @@ imports = [
     '';
   };
 
-programs = {
-  zsh = {
-    enable = true;
-    shellAliases = {
-      nixme = "sudo nixos-rebuild switch --flake";
-      ls = "ls --color=auto";
-    };
-    initExtra = ''
-      bindkey -v
-      bindkey -M viins jk vi-cmd-mode
-      bindkey -M viins "^P" up-line-or-history
-      bindkey -M viins "^N" down-line-or-history
-      export VISUAL=nvim
-      # Remove mode switching delay.
-      KEYTIMEOUT=10
-      # Change cursor shape for different vi modes.
-      function zle-keymap-select {
-      if [[ ''${KEYMAP} == vicmd ]] ||
-        [[ $1 = 'block' ]]; then
-            echo -ne '\e[1 q'
-
-        elif [[ ''${KEYMAP} == main ]] ||
-            [[ ''${KEYMAP} == viins ]] ||
-            [[ ''${KEYMAP} = ''\'''\' ]] ||
-            [[ ''$1 = 'beam' ]]; then
-                    echo -ne '\e[5 q'
-      fi
-      }
-      zle -N zle-keymap-select
-
-      # Use beam shape cursor on startup.
-      echo -ne '\e[5 q'
-      _fix_cursor() {
-         echo -ne '\e[5 q'
-      }
-
-      precmd_functions+=(_fix_cursor)
-
-      if [ -z $TMUX ]
-      then
-          tmux attach -t defaultsession || tmux new -s defaultsession
-      fi
-
-      if [[ -z "$SSH_AUTH_SOCK" ]]; then
-        export SSH_AUTH_SOCK="$(${config.programs.gpg.package}/bin/gpgconf --list-dirs agent-ssh-socket)"
-      fi
-
-      autoload -Uz vcs_info
-      precmd() { vcs_info }
-      zstyle ':vcs_info:git:*' check-for-changes true formats '[%b%u%c] '
-      setopt PROMPT_SUBST
-      PROMPT=''\'''${vcs_info_msg_0_} %F{yellow}zsh @ %~ |>%f'
-
-      [ -f "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ] && \
-      source "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-
-      #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#''${config.colorScheme.colors.base03}"
-      bindkey '^ ' autosuggest-accept
-
-      [ -f "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
-      source "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-      [ -f "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh" ] && \
-      source "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh"
+  programs = {
+    ssh.startAgent = true;
+    ssh.extraConfig = ''
+      AddKeysToAgent yes
     '';
-  };
 
-  tmux = {
-    enable = true;
-    extraConfig = ''
-      # leader
-      unbind C-b
-      set-option -g prefix C-a
-      bind-key C-a send-prefix
+    git = {
+      userEmail = "nohlachilders@github.com";
+      userName = "Nohl Childers";
+    }
 
-      # split panes
-      bind - split-window -h
-      bind | split-window -v
-
-      # Vim style pane selection
-      unbind h
-      unbind j
-      unbind k
-      unbind l
-      unbind g
-      bind j next-window
-      bind k previous-window
-      bind -r h switch-client -p\; refresh-client -S
-      bind -r l switch-client -n\; refresh-client -S
-      bind-key -r g run-shell "tmux neww lazygit"
-      # Start windows and panes at 1, not 0
-      set -g base-index 1
-      set -g pane-base-index 1
-      set-window-option -g pane-base-index 1
-      set-option -g renumber-windows on
-
-      unbind f
-      bind f display-popup -E "tms"
-      unbind r
-      bind r display-popup -E "tms switch"
-
-      set-option -g status-position top
-      set-option -g status-style fg=gold,bg=black
-
-      set -g status-left ""
-      set -g status-right "tmux @ #S "
-      set-option -g default-shell ${pkgs.zsh}/bin/zsh
-      set-window-option -g mode-keys vi
-    
-    '';
-  };
-  gpg = {
+    zsh = {
       enable = true;
-      homedir = "${config.xdg.dataHome}/gnupg"; # Move gnupg home to clean up ~
-      publicKeys = map (token: { source = ./gpg-keys + "/${token}-pub.asc"; trust = 5; }); 
-      # separate bit of code symlinks them to ~/.ssh/; servers get users.users.root.openssh_authorizedKeys.keys with contents from the ssh pubkey
+      shellAliases = {
+        nixme = "sudo nixos-rebuild switch --flake";
+        ls = "ls --color=auto";
+      };
+      initExtra = ''
+        bindkey -v
+        bindkey -M viins jk vi-cmd-mode
+        bindkey -M viins "^P" up-line-or-history
+        bindkey -M viins "^N" down-line-or-history
+        export VISUAL=nvim
+        # Remove mode switching delay.
+        KEYTIMEOUT=10
+        # Change cursor shape for different vi modes.
+        function zle-keymap-select {
+        if [[ ''${KEYMAP} == vicmd ]] ||
+          [[ $1 = 'block' ]]; then
+              echo -ne '\e[1 q'
+
+          elif [[ ''${KEYMAP} == main ]] ||
+              [[ ''${KEYMAP} == viins ]] ||
+              [[ ''${KEYMAP} = ''\'''\' ]] ||
+              [[ ''$1 = 'beam' ]]; then
+                      echo -ne '\e[5 q'
+        fi
+        }
+        zle -N zle-keymap-select
+
+        # Use beam shape cursor on startup.
+        echo -ne '\e[5 q'
+        _fix_cursor() {
+          echo -ne '\e[5 q'
+        }
+
+        precmd_functions+=(_fix_cursor)
+
+        if [ -z $TMUX ]
+        then
+            tmux attach -t defaultsession || tmux new -s defaultsession
+        fi
+
+        autoload -Uz vcs_info
+        precmd() { vcs_info }
+        zstyle ':vcs_info:git:*' check-for-changes true formats '[%b%u%c] '
+        setopt PROMPT_SUBST
+        PROMPT=''\'''${vcs_info_msg_0_} %F{yellow}zsh @ %~ |>%f'
+
+        [ -f "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ] && \
+        source "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+        #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#''${config.colorScheme.colors.base03}"
+        bindkey '^ ' autosuggest-accept
+
+        [ -f "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
+        source "$HOME/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+        [ -f "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh" ] && \
+        source "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh"
+      '';
     };
+
+    tmux = {
+      enable = true;
+      extraConfig = ''
+        # leader
+        unbind C-b
+        set-option -g prefix C-a
+        bind-key C-a send-prefix
+
+        # split panes
+        bind - split-window -h
+        bind | split-window -v
+
+        # Vim style pane selection
+        unbind h
+        unbind j
+        unbind k
+        unbind l
+        unbind g
+        bind j next-window
+        bind k previous-window
+        bind -r h switch-client -p\; refresh-client -S
+        bind -r l switch-client -n\; refresh-client -S
+        bind-key -r g run-shell "tmux neww lazygit"
+        # Start windows and panes at 1, not 0
+        set -g base-index 1
+        set -g pane-base-index 1
+        set-window-option -g pane-base-index 1
+        set-option -g renumber-windows on
+
+        unbind f
+        bind f display-popup -E "tms"
+        unbind r
+        bind r display-popup -E "tms switch"
+
+        set-option -g status-position top
+        set-option -g status-style fg=gold,bg=black
+
+        set -g status-left ""
+        set -g status-right "tmux @ #S "
+        set-option -g default-shell ${pkgs.zsh}/bin/zsh
+        set-window-option -g mode-keys vi
+      
+      '';
+    };
+
   };
 
-services.gpg-agent = {
-  enable = true;
-  enableSshSupport = true;
-  extraConfig = ''
-    pinentry-program ${pkgs.pinentry-qt}/bin/pinentry-qt
-  '';
-};
 
 }
 
