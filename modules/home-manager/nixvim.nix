@@ -34,7 +34,6 @@
 
       harpoon = {
         enable = true;
-        enableTelescope = true;
         keymaps = {
           addFile = "<leader>a";
           toggleQuickMenu = "<leader>e";
