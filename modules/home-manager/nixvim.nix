@@ -15,8 +15,12 @@
     enable = true;
     colorschemes.gruvbox.enable = true;
 
-    globals.mapleader = ",";
+    globals.mapleader = " ";
 
+    extraConfigLua = ''
+      -- Print a little welcome message when nvim is opened!
+      print("Hello world!")
+    '';
   };
 
 };
