@@ -20,7 +20,7 @@
       lsp= {
         enable = true;
         servers = {
-          nix_ls.enable = true;
+          nil_ls.enable = true;
         };
       };
     };
