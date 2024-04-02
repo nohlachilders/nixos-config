@@ -15,7 +15,15 @@
 
   programs.nixvim = {
     enable = true;
-    #defaultEditor = true;
+
+    plugins = {
+      lsp= {
+        enable = true;
+        servers = {
+          nix_ls.enable = true;
+        }
+      };
+    };
 
     colorschemes.gruvbox.enable = true;
 
