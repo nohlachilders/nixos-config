@@ -23,7 +23,7 @@ imports = [
   };
 
   programs = {
-    ssh.startAgent = true;
+    ssh.enable = true;
     ssh.extraConfig = ''
       AddKeysToAgent yes
     '';
@@ -139,9 +139,11 @@ imports = [
       
       '';
     };
-
   };
 
+  services = {
+    ssh-agent.enable = true;
+  };
 
 }
 
