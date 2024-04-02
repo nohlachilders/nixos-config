@@ -30,8 +30,9 @@
         enable = true;
         keymaps = {
           "<leader>f" = "find_files";
-          "<leader>g" "live_grep";
+          "<leader>g" = "live_grep";
         };
+
       };
     };
 
