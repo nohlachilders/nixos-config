@@ -81,8 +81,6 @@
 
       undotree.enable = true;
       treesitter.enable = true;
-      rainbow-delimiters.enable = true;
-
       };
 
     colorschemes.gruvbox.enable = true;
