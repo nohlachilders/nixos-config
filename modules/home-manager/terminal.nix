@@ -135,7 +135,7 @@ programs = {
   };
   gpg = {
       enable = true;
-      homedir = "${config.xdg.dataHome}/gnupg"; # Move gnupg home to clean up ~
+      homedir = "~/gnupg"; # Move gnupg home to clean up ~
       publicKeys = map (token: { source = ./gpg-keys + "/${token}-pub.asc"; trust = 5; }; 
       # separate bit of code symlinks them to ~/.ssh/; servers get users.users.root.openssh_authorizedKeys.keys with contents from the ssh pubkey
     };
