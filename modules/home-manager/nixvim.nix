@@ -8,7 +8,7 @@
   ...
 }: {
   imports = [
-    #inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   programs.neovim.enable = true;
