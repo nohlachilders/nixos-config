@@ -81,7 +81,7 @@
 
       undotree.enable = true;
       treesitter.enable = true;
-      rainbowdelimiters.enable = true;
+      rainbow-delimiters.enable = true;
 
       };
 
