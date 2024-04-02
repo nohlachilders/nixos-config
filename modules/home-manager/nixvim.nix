@@ -11,6 +11,8 @@
     #inputs.nixvim.homeManagerModules.nixvim
   ];
 
+  programs.neovim.enable = true;
+
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
