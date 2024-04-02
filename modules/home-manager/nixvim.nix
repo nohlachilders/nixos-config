@@ -36,10 +36,6 @@
       };
     };
 
-    keymaps = [
-      #{}
-    ];
-
     colorschemes.gruvbox.enable = true;
 
     globals.mapleader = " ";
