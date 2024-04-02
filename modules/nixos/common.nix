@@ -32,7 +32,6 @@
     zsh
     tmux
     tmux-sessionizer
-    neovim
     ranger
     fzf
 
