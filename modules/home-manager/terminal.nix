@@ -31,7 +31,7 @@ imports = [
     git = {
       userEmail = "nohlachilders@github.com";
       userName = "Nohl Childers";
-    }
+    };
 
     zsh = {
       enable = true;
