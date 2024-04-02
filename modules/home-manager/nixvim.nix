@@ -30,6 +30,7 @@
           "<leader>f" = "find_files";
           "<leader>g" = "live_grep";
         };
+      };
 
       harpoon = {
         enable = true;
@@ -44,6 +45,8 @@
             "4" = "<C-l>";
           };
         };
+      };
+
       nvim-cmp = {
         enable = true;
         autoEnableSources = true;
