@@ -10,7 +10,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    # ./nvim.nix
+    ./nixvim.nix
     ./terminal.nix
   ];
 
