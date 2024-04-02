@@ -11,13 +11,14 @@
     hardware.url = "github:nixos/nixos-hardware";
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
