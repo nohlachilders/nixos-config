@@ -86,9 +86,6 @@
 
       };
 
-      };
-    };
-
     colorschemes.gruvbox.enable = true;
 
     globals.mapleader = " ";
@@ -108,6 +105,7 @@
       vim.keymap.set("n", "<leader>w", vim.cmd.w)
       vim.keymap.set("n", "<leader>x", vim.cmd.Ex)
     '';
-  };
+      };
+    };
 
 }
