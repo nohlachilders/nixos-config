@@ -21,7 +21,7 @@
         enable = true;
         servers = {
           nix_ls.enable = true;
-        }
+        };
       };
     };
 
