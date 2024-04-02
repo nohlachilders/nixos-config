@@ -83,7 +83,6 @@
             modes = [ "i" ];
           };
         };
-        };
       };
 
       undotree.enable = true;
