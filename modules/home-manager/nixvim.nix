@@ -22,18 +22,20 @@
         servers = {
           nil_ls.enable = true;
         };
+      
+      keymaps = {
+          lspBuf = {
+            "gd" = "definition";
+            "vh" = "hover";
+            "<leader>vca" = "code_action";
+            "<leader>vrr" = "references";
+            "<leader>vrn" = "rename";
+          };
 
-        lspBuf = {
-          "gd" = "definition";
-          "vh" = "hover";
-          "<leader>vca" = "code_action";
-          "<leader>vrr" = "references";
-          "<leader>vrn" = "rename";
-        };
-
-        diagnostic = {
-          "[d" = "goto_prev";
-          "]d" = "goto_next";
+          diagnostic = {
+            "[d" = "goto_prev";
+            "]d" = "goto_next";
+          };
         };
       };
 
