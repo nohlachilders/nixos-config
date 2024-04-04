@@ -34,19 +34,24 @@
     tmux-sessionizer
     ranger
     fzf
-
-    kitty
-    wofi
-    mako
-    libnotify
-    swww
-  ];
+    ];
 
   security.polkit.enable = true;
 
   programs.zsh.enable = true;
   programs.ssh.startAgent = true;
 
+
+  console.useXkbConfig = true;
+  services.interception-tools.enable = true;
+  services.xserver.xkbOptions = "ctrl:nocaps";
+
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+    };
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
@@ -81,5 +86,5 @@
   time.timeZone = "America/Los_Angeles";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

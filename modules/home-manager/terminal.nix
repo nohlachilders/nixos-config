@@ -29,6 +29,7 @@ imports = [
     '';
 
     git = {
+      enable = true;
       userEmail = "nohlachilders@github.com";
       userName = "Nohl Childers";
     };

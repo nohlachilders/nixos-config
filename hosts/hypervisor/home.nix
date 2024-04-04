@@ -12,7 +12,6 @@
   imports = [
     # ./nvim.nix
     outputs.homeManagerModules.common
-    outputs.homeManagerModules.sway
   ];
 
   # Add stuff for your user as you see fit:
