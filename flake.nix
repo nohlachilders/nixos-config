@@ -55,7 +55,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
 #        {programs.hyprland.enable = true;}
-	  ./hardware-configuration.nix
 	  ./hosts/desktop/configuration.nix
         ];
       };

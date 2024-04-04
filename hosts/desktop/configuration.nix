@@ -12,6 +12,7 @@
     #outputs.nixosModules.swayX
     outputs.nixosModules.common
     outputs.nixosModules.hyprland-nvidia-compat
+    ./hardware-configuration.nix
   ];
 
   environment.systemPackages = with pkgs; [
