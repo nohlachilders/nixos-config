@@ -13,6 +13,7 @@
     # ./nvim.nix
     outputs.homeManagerModules.common
     outputs.homeManagerModules.hyprland
+    outputs.homeManagerModules.emacs
   ];
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
@@ -22,7 +23,7 @@
         monitor = [
             "DP-3,1920x1080,0x0,1"
             "HDMI-A-1,1920x1080, 0x1080, 1, transform, 2" 
-            "VGA-1,1440x900, 1920x0, 1, transform, 1"
+            "VGA-1,1440x900, 1920x-360, 1, transform, 1"
         ];
         workspace = [
             "name:1, monitor:DP-3, default:true"

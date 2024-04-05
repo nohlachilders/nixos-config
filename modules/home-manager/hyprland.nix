@@ -74,7 +74,7 @@
                    inactive_opacity = 0.75;
                    blur = {
                        size = 4;
-                       noise = .3;
+                       noise = .15;
                        passes = 3;
                    };
                };

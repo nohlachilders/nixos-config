@@ -6,4 +6,5 @@
   common = import ./common.nix;
   hyprland = import ./hyprland.nix;
   sway = import ./sway.nix;
+  emacs = import ./emacs.nix;
 }
