@@ -23,8 +23,7 @@
     libnotify
     swww
 
-    #discord
-    vesktop
+    discord
   ];
 
 fonts.packages = with pkgs;[
