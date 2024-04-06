@@ -12,6 +12,7 @@
     #outputs.nixosModules.swayX
     outputs.nixosModules.common
     outputs.nixosModules.hyprland-nvidia-compat
+    outputs.nixosModules.emacs
     ./hardware-configuration.nix
   ];
 
@@ -22,10 +23,13 @@
     libnotify
     swww
 
-    discord
+    #discord
+    vesktop
   ];
 
 fonts.packages = with pkgs;[
+    source-sans-pro
+    helvetica-neue-lt-std
     fira-code
     font-awesome
 ];
@@ -39,8 +43,8 @@ fonts.packages = with pkgs;[
   services.xserver.displayManager.sddm.wayland.enable = true;
   programs.hyprland = {
     enable = true;
+    package = pkgs.unstable.hyprland;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
   };
 
 xdg.portal.enable = true;

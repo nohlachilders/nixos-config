@@ -26,7 +26,7 @@
             "VGA-1,1440x900, 1920x-360, 1, transform, 1"
         ];
         workspace = [
-            "name:1, monitor:DP-3, default:true"
+            #"name:1, monitor:DP-3, default:true"
             "name:2, monitor:DP-3"
             "name:3, monitor:DP-3"
             "name:4, monitor:DP-3"
