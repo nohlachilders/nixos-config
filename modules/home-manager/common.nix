@@ -12,6 +12,7 @@
   imports = [
     ./nixvim.nix
     ./terminal.nix
+    ./nix-colors.nix
   ];
 
   home = {

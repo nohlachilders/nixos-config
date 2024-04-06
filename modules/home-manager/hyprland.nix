@@ -12,7 +12,9 @@
         startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
         ${pkgs.waybar}/bin/waybar 
         nohup ${pkgs.discord}/bin/discord
+        ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store
         '';
+        gruvbox-plus = import ./etc/gruvbox-plus.nix {inherit pkgs; };
     in {
     imports = [
     ];
@@ -29,7 +31,7 @@
                 ];
                bind = [
                     "$mod, RETURN, exec, kitty"
-                    "ALT_L, SPACE, exec, pkill wofi || wofi --show drun"
+                    "ALT_L, SPACE, exec, pkill wofi || wofi --show drun --allow-images"
                     "$mod SHIFT, Q, killactive"
                     "$mod, h, movefocus, l"
                     "$mod SHIFT, h, movewindow, l"
@@ -112,6 +114,10 @@
             name = "Adwaita-dark";
             package = pkgs.gnome.gnome-themes-extra;
         };
+        font.name = "Overpass";
+        font.size = 14;
+        iconTheme.package = gruvbox-plus;
+        iconTheme.name = "GruvboxPlus";
     };
 
     }

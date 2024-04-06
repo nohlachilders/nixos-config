@@ -18,15 +18,19 @@
 
   environment.systemPackages = with pkgs; [
     foot
+
     wofi
     mako
     libnotify
     swww
+    wl-clipboard
+    cliphist
 
     discord
   ];
 
 fonts.packages = with pkgs;[
+    overpass
     source-sans-pro
     helvetica-neue-lt-std
     fira-code
