@@ -36,6 +36,14 @@
         font = "Fira Code 14";
     };
 
+    programs.zathura = with config.colorScheme.palette; {
+    extraConfig = ''
+        set font "Overpass 14"
+        set recolor "true"
+        set recolor-lightcolor "#${base00}"
+        set recolor-darkcolor "#${base04}"
+    '';};
+
     programs.waybar = with config.colorScheme.palette; {
         style = ''
         @define-color background-darker #${base00};

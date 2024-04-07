@@ -10,7 +10,12 @@
 }:
 
 let
-    startupScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
+    workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
+        firefox
+        emacs
+        discord
+    '';
+    wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
         swww img -o VGA-1 ~/Dropbox/drawings/048.png
         swww img -o DP-3 ~/Dropbox/drawings/face2.png
@@ -25,11 +30,18 @@ in {
     ];
     wayland.windowManager.hyprland = {
         settings = {
-            exec-once = [''${startupScript}/bin/wallpaper'']; 
+            exec-once = [
+                ''${wallpaperScript}/bin/wallpaper'' 
+                ''${workspaceScript}/bin/workspace''
+            ]; 
             monitor = [
                 "DP-3,1920x1080,0x0,1"
                 "HDMI-A-1,1920x1080, 0x1080, 1, transform, 2" 
                 "VGA-1,1440x900, 1920x-360, 1, transform, 1"
+            ];
+            windowrule = [
+                "float,title:^(Picture-in-Picture)$"
+                "workspace side,^(Discord)$"
             ];
             workspace = [
                 #"name:1, monitor:DP-3, default:true"

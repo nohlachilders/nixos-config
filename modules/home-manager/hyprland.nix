@@ -80,6 +80,7 @@
     };
 
     programs = {
+        zathura.enable = true;
         firefox.enable = true;
         kitty = {
             enable = true;
