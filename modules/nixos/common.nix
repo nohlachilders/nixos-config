@@ -33,6 +33,7 @@
     tmux
     tmux-sessionizer
     ranger
+    lf
     fzf
     ];
 
