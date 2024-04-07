@@ -112,16 +112,24 @@
     };
 
     fonts.fontconfig.enable = true;
+
+    home.file = {
+        ".local/share/icons/Gruvbox-Plus-Dark".source = "${gruvbox-plus}/Gruvbox-Plus-Dark";
+    };
     gtk = {
         enable = true;
         theme = {
-            name = "Adwaita-dark";
-            package = pkgs.gnome.gnome-themes-extra;
+            #name = "adw-gtk3";
+            #package = pkgs.adw-gtk3;
+            name = "Colloid-Dark-Gruvbox";
+            package = (pkgs.colloid-gtk-theme.override {
+                tweaks = ["gruvbox" "rimless" "float"];
+            });
         };
         font.name = "Overpass";
         font.size = 14;
         iconTheme.package = gruvbox-plus;
-        iconTheme.name = "GruvboxPlus";
+        iconTheme.name = "Gruvbox-Plus-Dark";
     };
 
     }

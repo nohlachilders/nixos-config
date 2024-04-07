@@ -7,7 +7,7 @@
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
     wayland.windowManager.hyprland.settings = {
-        general = with config.colorScheme.colors; {
+        general = with config.colorScheme.palette; {
             gaps_in = 2;
             gaps_out = 2;
             border_size = 2;
@@ -26,7 +26,7 @@
         };
     };
 
-    services.mako = with config.colorScheme.colors; {
+    services.mako = with config.colorScheme.palette; {
         backgroundColor = "#${base00}";
         borderColor = "#${base0A}";
         borderRadius = 5;
@@ -36,7 +36,7 @@
         font = "Fira Code 14";
     };
 
-    programs.waybar = with config.colorScheme.colors; {
+    programs.waybar = with config.colorScheme.palette; {
         style = ''
         @define-color background-darker #${base00};
         @define-color background #${base01};
