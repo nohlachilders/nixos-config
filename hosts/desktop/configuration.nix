@@ -18,6 +18,7 @@
 
   environment.systemPackages = with pkgs; [
     foot
+    neofetch
 
     wofi
     mako
@@ -34,6 +35,7 @@ fonts.packages = with pkgs;[
     source-sans-pro
     helvetica-neue-lt-std
     fira-code
+    fira-code-nerdfont
     font-awesome
 ];
 

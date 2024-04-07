@@ -10,14 +10,18 @@
 
     let
         startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-        ${pkgs.waybar}/bin/waybar 
-        nohup ${pkgs.discord}/bin/discord
-        ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store
+            ${pkgs.waybar}/bin/waybar 
+            nohup ${pkgs.discord}/bin/discord
+            ${pkgs.wl-clipboard}/bin/wl-paste --type text image --watch ${pkgs.cliphist}/bin/cliphist store
+            #${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store
         '';
         gruvbox-plus = import ./etc/gruvbox-plus.nix {inherit pkgs; };
     in {
+
     imports = [
+        ./etc/waybar.nix
     ];
+
     wayland.windowManager = {
         hyprland = {
             enable = true;
@@ -33,6 +37,7 @@
                     "$mod, RETURN, exec, kitty"
                     "ALT_L, SPACE, exec, pkill wofi || wofi --show drun --allow-images"
                     "$mod SHIFT, Q, killactive"
+                    "$mod SHIFT, Z, exec, ${pkgs.grim}/bin/grim -g ''\"$(${pkgs.slurp}/bin/slurp -d)''\" - | wl-copy"
                     "$mod, h, movefocus, l"
                     "$mod SHIFT, h, movewindow, l"
                     "$mod, l, movefocus, r"
@@ -70,16 +75,6 @@
                     "sensitivity" = "-.15";
                     "accel_profile" = "flat";
                };
-               decoration = {
-                   #rounding = 5;
-                   active_opacity = 0.86;
-                   inactive_opacity = 0.75;
-                   blur = {
-                       size = 4;
-                       noise = .15;
-                       passes = 3;
-                   };
-               };
             };
         };
     };
@@ -94,6 +89,7 @@
                 size = 12;
             };
         };
+        waybar.enable = true;
     };
 
     services = {
@@ -104,8 +100,9 @@
             longitude = -117.159;
             temperature.night = 2300;
             tray = true;
-            };
         };
+        mako.enable = true;
+    };
 
     fonts.fontconfig.enable = true;
     gtk = {
