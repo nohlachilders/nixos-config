@@ -26,6 +26,12 @@
     swww
     wl-clipboard
     cliphist
+    grim
+    slurp
+    grimblast
+
+    maestral
+    zathura
 
     discord
   ];

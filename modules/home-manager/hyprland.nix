@@ -27,7 +27,7 @@
             enable = true;
             xwayland.enable = true;
             settings = {
-               exec-once = ''${startupScript}/bin/start''; 
+               exec-once = [''${startupScript}/bin/start'']; 
                "$mod" = "SUPER";
                bindm = [
                 "$mod, mouse:272, movewindow"
@@ -37,7 +37,7 @@
                     "$mod, RETURN, exec, kitty"
                     "ALT_L, SPACE, exec, pkill wofi || wofi --show drun --allow-images"
                     "$mod SHIFT, Q, killactive"
-                    "$mod SHIFT, Z, exec, ${pkgs.grim}/bin/grim -g ''\"$(${pkgs.slurp}/bin/slurp -d)''\" - | wl-copy"
+                    "$mod SHIFT, Z, exec, grimblast copy area" 
                     "$mod, h, movefocus, l"
                     "$mod SHIFT, h, movewindow, l"
                     "$mod, l, movefocus, r"
