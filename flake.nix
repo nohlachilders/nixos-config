@@ -60,6 +60,13 @@
           ./hosts/hypervisor/configuration.nix
         ];
       };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+#        {programs.hyprland.enable = true;}
+	  ./hosts/laptop/configuration.nix
+        ];
+      };
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
