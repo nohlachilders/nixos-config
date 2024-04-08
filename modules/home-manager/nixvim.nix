@@ -89,6 +89,7 @@
 
       undotree.enable = true;
       treesitter.enable = true;
+      rainbow-delimiters.enable = true;
       };
 
     colorschemes.gruvbox.enable = true;
@@ -112,6 +113,7 @@
 
       vim.opt.nu = true
       vim.opt.relativenumber = true
+      vim.opt.clipboard = unnamedplus
 
       vim.opt.tabstop = 4
       vim.opt.softtabstop = 4

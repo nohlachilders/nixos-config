@@ -4,5 +4,7 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   common = import ./common.nix;
+  hyprland = import ./hyprland.nix;
   sway = import ./sway.nix;
+  emacs = import ./emacs.nix;
 }

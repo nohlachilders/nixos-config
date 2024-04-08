@@ -29,14 +29,19 @@ imports = [
     '';
 
     git = {
+      enable = true;
       userEmail = "nohlachilders@github.com";
       userName = "Nohl Childers";
+      extraConfig = {
+        push.default = "upstream";
+      };
     };
     gh.enable = true;
 
     zsh = {
       enable = true;
       shellAliases = {
+        v = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
         ls = "ls --color=auto";
       };
@@ -114,11 +119,13 @@ imports = [
         unbind k
         unbind l
         unbind g
+        unbind n
         bind j next-window
         bind k previous-window
         bind -r h switch-client -p\; refresh-client -S
         bind -r l switch-client -n\; refresh-client -S
         bind-key -r g run-shell "tmux neww lazygit"
+        bind-key -r n run-shell "tmux neww nvim"
         # Start windows and panes at 1, not 0
         set -g base-index 1
         set -g pane-base-index 1
