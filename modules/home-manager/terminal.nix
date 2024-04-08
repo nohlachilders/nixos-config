@@ -34,6 +34,7 @@ imports = [
       userName = "Nohl Childers";
       extraConfig = {
         push.default = "upstream";
+        init.defaultBranch = "main";
       };
     };
     gh.enable = true;
