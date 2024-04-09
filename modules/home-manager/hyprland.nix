@@ -36,6 +36,8 @@
                bind = [
                     "$mod, RETURN, exec, kitty"
                     "ALT_L, SPACE, exec, pkill wofi || wofi --show drun --allow-images"
+                    "$mod, f, fullscreen"
+                    "$mod, SPACE, togglefloating"
                     "$mod SHIFT, Q, killactive"
                     "$mod SHIFT, Z, exec, grimblast copy area" 
                     "$mod, h, movefocus, l"
