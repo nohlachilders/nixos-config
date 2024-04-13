@@ -53,6 +53,12 @@
 
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
+      wsl = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/wsl/configuration.nix
+        ];
+      };
       hypervisor = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
