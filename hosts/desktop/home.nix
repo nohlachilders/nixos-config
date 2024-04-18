@@ -12,14 +12,12 @@
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
         firefox
-        emacs
-        discord
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
         swww img -o DP-3 ~/Dropbox/drawings/048.png
         swww img -o DP-1 ~/Dropbox/drawings/face2.png
-        swww img -o VGA-1 ~/Dropbox/drawings/047_3.png
+        swww img -o HDMI-A-1 ~/Dropbox/drawings/047_3.png
     '';
 in {
     # You can import other home-manager modules here
