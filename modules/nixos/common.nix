@@ -35,6 +35,9 @@
     ranger
     lf
     fzf
+
+    zap
+
     ];
 
   security.polkit.enable = true;
