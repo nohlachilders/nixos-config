@@ -45,6 +45,11 @@ fonts.packages = with pkgs;[
 ];
 
 
+  boot.loader.grub= {
+    enable = true;
+    useOSProber = true;
+  };
+
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;

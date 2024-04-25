@@ -7,6 +7,7 @@
   hyprland-nvidia-compat = import ./hyprland-nvidia-compat.nix;
   sway = import ./sway.nix;
     emacs = import ./emacs.nix;
+    cyber = import ./cyber.nix;
 }
 
 

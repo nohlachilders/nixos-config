@@ -36,8 +36,6 @@
     lf
     fzf
 
-    zap
-
     ];
 
   security.polkit.enable = true;
@@ -79,11 +77,6 @@
 
   hardware ={
     opengl.enable = true;
-  };
-
-  boot.loader.grub= {
-    enable = true;
-    useOSProber = true;
   };
 
   networking.networkmanager.enable = true;

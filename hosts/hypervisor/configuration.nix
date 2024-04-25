@@ -13,6 +13,11 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  boot.loader.grub= {
+    enable = true;
+    useOSProber = true;
+  };
+
   #virtualisation.virtualbox.guest.enable = true;
   virtualisation.hypervGuest.enable = true;
   boot.loader.grub.device = "nodev";

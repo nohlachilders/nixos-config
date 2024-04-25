@@ -13,6 +13,7 @@
     outputs.nixosModules.common
     outputs.nixosModules.hyprland-nvidia-compat
     outputs.nixosModules.emacs
+    outputs.nixosModules.cyber
     ./hardware-configuration.nix
   ];
 
@@ -44,6 +45,11 @@ fonts.packages = with pkgs;[
     font-awesome
 ];
 
+
+  boot.loader.grub= {
+    enable = true;
+    useOSProber = true;
+  };
 
   #virtualisation.virtualbox.guest.enable = true;
   boot.loader.grub.device = "/dev/sda";
