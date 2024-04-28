@@ -107,6 +107,25 @@
             margin: 4px;
         }
 
+        #backlight-slider slider {
+            min-height: 10px;
+            min-width: 10px;
+            border: 2px solid @foreground;
+            background: @background;
+        }
+        #backlight-slider trough {
+            min-height: 10px;
+            min-width: 80px;
+            border: 2px solid @foreground;
+            border-radius: 5px;
+            background-color: @background-darker;
+        }
+        #backlight-slider highlight {
+            min-width: 10px;
+            border-radius: 5px;
+            background-color: @foreground;
+        }
+
         #pulseaudio-slider slider {
             min-height: 10px;
             min-width: 10px;

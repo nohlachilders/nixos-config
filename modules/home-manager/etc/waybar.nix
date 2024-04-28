@@ -7,7 +7,7 @@
             height = 20;
             modules-left = [ "hyprland/workspaces" ];
             modules-center = [ "hyprland/window" ];
-            modules-right = [ "pulseaudio" "pulseaudio/slider" "clock" "tray" ];
+            modules-right = [ "pulseaudio" "pulseaudio/slider" "backlight" "backlight/slider" "clock" "tray" ];
 
             "hyprland/workspaces" = {
                 disable-scroll = true;
@@ -19,6 +19,10 @@
 
             pulseaudio = {
                 format = "󰕾 {volume}%";
+            };
+
+            backlight = {
+                format = " {percent}%"; 
             };
 
             "clock" = {
