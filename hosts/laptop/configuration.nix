@@ -33,6 +33,8 @@
     zathura
 
     discord
+
+    zap
   ];
 
 fonts.packages = with pkgs;[
