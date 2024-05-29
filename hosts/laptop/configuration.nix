@@ -13,6 +13,7 @@
     outputs.nixosModules.common
     outputs.nixosModules.hyprland-nvidia-compat
     outputs.nixosModules.emacs
+    outputs.nixosModules.cyber
     ./hardware-configuration.nix
   ];
 
