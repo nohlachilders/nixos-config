@@ -12,7 +12,7 @@
 
     environment.systemPackages = with pkgs; [
         zap
-        burp
+        burpsuite
         openvpn
     ];
 
