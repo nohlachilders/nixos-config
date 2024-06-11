@@ -33,9 +33,9 @@ in {
                 ''${workspaceScript}/bin/workspace''
             ]; 
             monitor = [
-                "DP-2,1920x1080@120,0x0,1"
+                "DP-1,1920x1080@120,0x0,1"
                 "HDMI-A-1,1920x1080, 0x1080, 1, transform, 2" 
-                "DP-3,1440x900, 1920x-360, 1, transform, 1"
+                "DP-2,1440x900, 1920x-360, 1, transform, 1"
             ];
             windowrule = [
                 "float,title:^(Picture-in-Picture)$"
@@ -52,7 +52,7 @@ in {
                 "name:8, monitor:DP-1"
                 "name:9, monitor:DP-1"
                 "name:10, monitor:DP-1"
-                "name:side, monitor:DP-1, default:true"
+                "name:side, monitor:DP-2, default:true"
                 "name:cintiq, monitor:HDMI-A-1, default:true"
             ];
         };
