@@ -15,7 +15,7 @@ let
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
-        swww img -o DP-3 ~/Dropbox/drawings/048.png
+        swww img -o DP-2 ~/Dropbox/drawings/048.png
         swww img -o DP-1 ~/Dropbox/drawings/face2.png
         swww img -o HDMI-A-1 ~/Dropbox/drawings/047_3.png
     '';
@@ -33,7 +33,7 @@ in {
                 ''${workspaceScript}/bin/workspace''
             ]; 
             monitor = [
-                "DP-1,1920x1080@120,0x0,1"
+                "DP-2,1920x1080@120,0x0,1"
                 "HDMI-A-1,1920x1080, 0x1080, 1, transform, 2" 
                 "DP-3,1440x900, 1920x-360, 1, transform, 1"
             ];
@@ -52,7 +52,7 @@ in {
                 "name:8, monitor:DP-1"
                 "name:9, monitor:DP-1"
                 "name:10, monitor:DP-1"
-                "name:side, monitor:DP-3, default:true"
+                "name:side, monitor:DP-1, default:true"
                 "name:cintiq, monitor:HDMI-A-1, default:true"
             ];
         };
