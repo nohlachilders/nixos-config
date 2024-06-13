@@ -35,6 +35,7 @@
     ranger
     lf
     fzf
+    w3m
 
     ];
 

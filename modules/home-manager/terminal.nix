@@ -44,7 +44,7 @@ imports = [
       shellAliases = {
         v = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
-        ls = "ls --color=auto";
+        ls = "ls --color=auto"; 
       };
       initExtra = ''
         bindkey -v
@@ -99,6 +99,12 @@ imports = [
 
         [ -f "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh" ] && \
         source "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh"
+
+        duck (){
+            local search=$@
+            search="''${search// /%20}"
+            w3m "https://lite.duckduckgo.com/html/?q=$search";
+        }
       '';
     };
 
