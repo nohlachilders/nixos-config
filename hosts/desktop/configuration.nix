@@ -36,6 +36,7 @@
     discord
 
     krita
+    obs-studio
   ];
 
 fonts.packages = with pkgs;[
