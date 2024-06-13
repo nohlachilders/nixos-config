@@ -34,6 +34,8 @@
     zathura
 
     discord
+
+    krita
   ];
 
 fonts.packages = with pkgs;[
@@ -68,6 +70,8 @@ xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 xdg.portal.config.common.default = "*";
 
   networking.hostName = "nixos";
+
+hardware.opentabletdriver.enable = true;
 
   home-manager = {
     users = {
