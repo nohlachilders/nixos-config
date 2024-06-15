@@ -45,6 +45,7 @@ imports = [
         v = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
         ls = "ls --color=auto"; 
+        ai = "tgpt";
       };
       initExtra = ''
         bindkey -v

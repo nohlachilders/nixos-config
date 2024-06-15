@@ -36,6 +36,7 @@
     lf
     fzf
     w3m
+    tgpt
 
     ];
 
