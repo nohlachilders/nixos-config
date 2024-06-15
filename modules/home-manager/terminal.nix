@@ -45,7 +45,6 @@ imports = [
         v = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
         ls = "ls --color=auto"; 
-        ai = "tgpt";
       };
       initExtra = ''
         bindkey -v
@@ -105,6 +104,10 @@ imports = [
             local search=$@
             search="''${search// /%20}"
             w3m "https://lite.duckduckgo.com/html/?q=$search";
+        }
+        ai (){
+            local search=$*
+            tgpt "$search";
         }
       '';
     };
