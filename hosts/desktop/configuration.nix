@@ -37,6 +37,7 @@
 
     krita
     obs-studio
+    unstable.godot_4
   ];
 
 fonts.packages = with pkgs;[
