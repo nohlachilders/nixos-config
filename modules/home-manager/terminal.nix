@@ -107,7 +107,7 @@ imports = [
         }
         ai (){
             local search=$*
-            tgpt "$search";
+            tgpt "answer the following prompt as concisely as possible: $search";
         }
       '';
     };
