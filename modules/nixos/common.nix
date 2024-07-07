@@ -34,7 +34,7 @@
     tmux-sessionizer
     ranger
     lf
-    fzf
+    unstable.fzf
     w3m
     unstable.tgpt
 

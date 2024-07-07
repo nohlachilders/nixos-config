@@ -158,6 +158,11 @@ imports = [
       
       '';
     };
+
+    fzf = {
+        enable = true;
+        enableZshIntegration = true;
+    };
   };
 
   services = {
