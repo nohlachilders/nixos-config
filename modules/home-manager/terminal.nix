@@ -105,10 +105,21 @@ imports = [
             search="''${search// /%20}"
             w3m "https://lite.duckduckgo.com/html/?q=$search";
         }
+
         ai (){
             local search=$*
             tgpt "answer the following prompt as concisely as possible: $search";
         }
+
+        flakify (){
+            if [ ! -e flake.nix ]; then
+                nix flake new -t github:nix-community/nix-direnv . 
+            elif [ ! -e .envrc ]; then
+                echo "use flake" > .envrc
+                direnv allow
+            fi
+        }
+
       '';
     };
 
@@ -135,8 +146,7 @@ imports = [
         bind k previous-window
         bind -r h switch-client -p\; refresh-client -S
         bind -r l switch-client -n\; refresh-client -S
-        bind-key -r g run-shell "tmux neww lazygit"
-        bind-key -r n run-shell "tmux neww nvim"
+        bind-key -r g run-shell "tmux neww -c lazygit"
         # Start windows and panes at 1, not 0
         set -g base-index 1
         set -g pane-base-index 1
