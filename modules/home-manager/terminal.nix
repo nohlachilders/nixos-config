@@ -42,7 +42,7 @@ imports = [
     zsh = {
       enable = true;
       shellAliases = {
-        v = "nvim";
+        vi = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
         ls = "ls --color=auto"; 
       };
