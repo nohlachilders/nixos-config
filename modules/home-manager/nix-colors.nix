@@ -45,7 +45,7 @@
     '';};
 
     programs.waybar = with config.colorScheme.palette; {
-        style = ''
+        style = /*css*/ ''
         @define-color background-darker #${base00};
         @define-color background #${base01};
         @define-color selection #${base03};

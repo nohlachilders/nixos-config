@@ -22,6 +22,12 @@
         servers = {
           nil_ls.enable = true;
           gopls.enable = true;
+          bashls.enable = true;
+          cssls.enable = true;
+          gdscript.enable = true;
+          html.enable = true;
+          jsonls.enable = true;
+          tsserver.enable = true;
         };
       
       keymaps = {
@@ -97,7 +103,7 @@
 
     globals.mapleader = " ";
 
-    extraConfigLua = ''
+    extraConfigLua = /*lua*/ ''
       vim.keymap.set("i","jk", "<Esc>")
       vim.keymap.set("v","jk", "<Esc>")
       vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
