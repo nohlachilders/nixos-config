@@ -45,6 +45,7 @@ imports = [
         vi = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
         ls = "ls --color=auto"; 
+        lg = "lazygit";
       };
       initExtra = ''
         bindkey -v
