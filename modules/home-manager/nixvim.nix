@@ -16,6 +16,10 @@
   programs.nixvim = {
     enable = true;
 
+    extraPlugins = with pkgs.vimPlugins; [
+        otter-nvim
+    ];
+
     plugins = {
       lsp= {
         enable = true;
