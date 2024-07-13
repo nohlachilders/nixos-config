@@ -10,9 +10,6 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
-#    hyprland.url = "github:hyprwm/Hyprland";
-#    hyprland.inputs.nixpkgs.follows = "nixpkgs";
-
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
 
     emacs-overlay = {
@@ -69,15 +66,13 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-#        {programs.hyprland.enable = true;}
-	  ./hosts/laptop/configuration.nix
+          ./hosts/laptop/configuration.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-#        {programs.hyprland.enable = true;}
-	  ./hosts/desktop/configuration.nix
+          ./hosts/desktop/configuration.nix
         ];
       };
     };

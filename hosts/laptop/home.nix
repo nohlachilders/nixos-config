@@ -11,9 +11,8 @@
 
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
-        firefox
-        emacs
-        discord
+        firefox &
+        discord &
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
