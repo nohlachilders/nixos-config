@@ -16,15 +16,11 @@
   programs.nixvim = {
     enable = true;
 
-    extraPlugins = with pkgs.vimPlugins; [
-        otter-nvim
-    ];
-
     plugins = {
       lsp= {
         enable = true;
         servers = {
-          nil_ls.enable = true;
+          nil-ls.enable = true;
           gopls.enable = true;
           bashls.enable = true;
           cssls.enable = true;
@@ -72,29 +68,20 @@
         };
       };
 
-      nvim-cmp = {
+      cmp = {
         enable = true;
         autoEnableSources = true;
-        sources = [
+        settings.sources = [
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
           {name = "luasnip";}
         ];
 
-        mapping = {
-          "<C-p>" = {
-            action = "cmp.mapping.select_prev_item(cmp_select)";
-            modes = [ "i" ];
-          };
-          "<C-n>" = {
-            action = "cmp.mapping.select_next_item(cmp_select)";
-            modes = [ "i" ];
-          };
-          "<C-Space>" = {
-            action = "cmp.mapping.confirm({select = true})";
-            modes = [ "i" ];
-          };
+        settings.mapping = {
+          "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(cmp_select), {'i'})";
+          "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(cmp_select), {'i'})";
+          "<C-Space>" = "cmp.mapping(cmp.mapping.confirm({select = true}), {'i'})";
         };
       };
 

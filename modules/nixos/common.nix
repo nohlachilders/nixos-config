@@ -43,6 +43,7 @@
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
         # dependencies for non-nixpkgs binaries go here
+        unstable.go
     ];
 
     security.polkit.enable = true;
@@ -53,7 +54,7 @@
 
     console.useXkbConfig = true;
     services.interception-tools.enable = true;
-    services.xserver.xkbOptions = "ctrl:nocaps";
+    services.xserver.xkb.options = "ctrl:nocaps";
 
     services.pipewire = {
         enable = true;
