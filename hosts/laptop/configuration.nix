@@ -63,7 +63,6 @@ fonts.packages = with pkgs;[
   services.xserver.displayManager.sddm.wayland.enable = true;
   programs.hyprland = {
     enable = true;
-    package = pkgs.unstable.hyprland;
     xwayland.enable = true;
   };
 

@@ -24,6 +24,7 @@
 
     environment.systemPackages = with pkgs; [
         home-manager
+        nix-prefetch-github
 
         git
         lazygit
