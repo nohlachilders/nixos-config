@@ -63,8 +63,10 @@ fonts.packages = with pkgs;[
   services.xserver.displayManager.sddm.wayland.enable = true;
   programs.hyprland = {
     enable = true;
+    package = pkgs.unstable.hyprland;
     xwayland.enable = true;
   };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 xdg.portal.enable = true;
 xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];

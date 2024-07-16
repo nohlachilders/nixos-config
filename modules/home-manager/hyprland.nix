@@ -77,6 +77,9 @@
                     "sensitivity" = "-.15";
                     "accel_profile" = "flat";
                };
+               debug = {
+                "disable_logs" = false;
+                };
             };
         };
     };
