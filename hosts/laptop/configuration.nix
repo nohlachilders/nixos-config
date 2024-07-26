@@ -36,6 +36,8 @@
     discord
 
     zap
+
+    upower
   ];
 
 fonts.packages = with pkgs;[
