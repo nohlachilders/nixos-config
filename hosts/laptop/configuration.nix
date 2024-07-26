@@ -37,7 +37,7 @@
 
     zap
 
-    upower
+    acpi
   ];
 
 fonts.packages = with pkgs;[
