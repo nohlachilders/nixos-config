@@ -87,7 +87,8 @@ imports = [
         precmd() { vcs_info }
         zstyle ':vcs_info:git:*' check-for-changes true formats '[%b%u%c] '
         setopt PROMPT_SUBST
-        PROMPT=''\'''${vcs_info_msg_0_} %F{yellow}zsh @ %~ |>%f'
+        NEWLINE=$'\n'
+        PROMPT=' ''\${NEWLINE}╭───%F{white}''${vcs_info_msg_0_} %F{yellow}zsh @ %~ ''\${NEWLINE}%F{default}╰─%F{yellow}|>%f'
 
         [ -f "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ] && \
         source "$HOME/.local/share/zsh/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
