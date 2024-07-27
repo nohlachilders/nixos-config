@@ -28,6 +28,7 @@
           html.enable = true;
           jsonls.enable = true;
           tsserver.enable = true;
+          pylsp.enable = true;
         };
       
       keymaps = {
