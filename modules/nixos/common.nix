@@ -40,6 +40,7 @@
         w3m
         unstable.tgpt
 
+        jq
     ];
 
     programs.nix-ld.enable = true;
