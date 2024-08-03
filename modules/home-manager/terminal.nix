@@ -8,7 +8,6 @@
 }: {
 
 imports = [
-    ./scripts.nix
 ];
 
   home.file = {
