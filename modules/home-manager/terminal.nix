@@ -48,6 +48,7 @@ imports = [
         lg = "lazygit";
       };
       initExtra = ''
+        source ~/.env
         bindkey -v
         bindkey -M viins jk vi-cmd-mode
         bindkey -M viins "^P" up-line-or-history
@@ -129,8 +130,8 @@ imports = [
         bind-key C-a send-prefix
 
         # split panes
-        bind - split-window -h
-        bind | split-window -v
+        bind | split-window -h
+        bind - split-window -v
 
         # Vim style pane selection
         unbind h
