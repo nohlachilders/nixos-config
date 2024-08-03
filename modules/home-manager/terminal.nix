@@ -8,6 +8,7 @@
 }: {
 
 imports = [
+    ./scripts.nix
 ];
 
   home.file = {
@@ -106,11 +107,6 @@ imports = [
             local search=$@
             search="''${search// /%20}"
             w3m "https://lite.duckduckgo.com/html/?q=$search";
-        }
-
-        ai (){
-            local search=$*
-            tgpt "answer the following prompt as concisely as possible: $search";
         }
 
         flakify (){
