@@ -9,6 +9,15 @@
 
     environment.systemPackages = with pkgs; [
         (writeShellApplication {
+            name = "srd";
+            text = ''
+                while read -r line; do
+                    echo "$1$line$2"
+                done
+            '';
+        })
+
+        (writeShellApplication {
             name = "ai";
             text = ''
                 search=$*
