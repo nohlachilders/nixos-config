@@ -69,22 +69,22 @@
         };
       };
 
-#      cmp = {
-#        enable = true;
-#        autoEnableSources = true;
-#        settings.sources = [
-#          {name = "nvim_lsp";}
-#          {name = "path";}
-#          {name = "buffer";}
-#          {name = "luasnip";}
-#        ];
-#
-#        settings.mapping = {
-#          "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(cmp_select), {'i'})";
-#          "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(cmp_select), {'i'})";
-#          "<C-Space>" = "cmp.mapping(cmp.mapping.confirm({select = true}), {'i'})";
-#        };
-#      };
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings.sources = [
+          {name = "nvim_lsp";}
+          {name = "path";}
+          {name = "buffer";}
+          {name = "luasnip";}
+        ];
+
+        settings.mapping = {
+          "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(cmp_select), {'i'})";
+          "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(cmp_select), {'i'})";
+          "<C-Space>" = "cmp.mapping(cmp.mapping.confirm({select = true}), {'i'})";
+        };
+      };
 
       undotree.enable = true;
       treesitter.enable = true;
