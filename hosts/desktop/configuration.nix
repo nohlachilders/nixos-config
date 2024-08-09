@@ -62,8 +62,8 @@
     boot.loader.grub.device = "/dev/sda";
 
     services.xserver.enable = true;
-    services.xserver.displayManager.sddm.enable = true;
-    services.xserver.displayManager.sddm.wayland.enable = true;
+    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.displayManager.gdm.wayland = true;
     programs.hyprland = {
         enable = true;
         xwayland.enable = true;

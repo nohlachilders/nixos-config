@@ -20,7 +20,7 @@
       lsp= {
         enable = true;
         servers = {
-          nil_ls.enable = true;
+          nil-ls.enable = true;
           gopls.enable = true;
           bashls.enable = true;
           cssls.enable = true;
