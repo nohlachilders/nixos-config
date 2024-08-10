@@ -41,6 +41,7 @@
             obs-studio
             unstable.godot_4
             unstable.mesa
+            chatterino2
             ];
 
     fonts.packages = with pkgs;[
