@@ -20,15 +20,17 @@
   environment.systemPackages = with pkgs; [
     neofetch
 
-    wofi
-    mako
-    libnotify
-    swww
-    wl-clipboard
-    cliphist
-    grim
-    slurp
-    grimblast
+            unstable.hyprland
+            unstable.wofi
+            unstable.mako
+            unstable.libnotify
+            unstable.swww
+            unstable.wl-clipboard
+            unstable.cliphist
+            unstable.grim
+            unstable.slurp
+            unstable.grimblast
+            unstable.kitty
 
     maestral
     zathura
@@ -60,16 +62,14 @@ fonts.packages = with pkgs;[
   boot.loader.efi.canTouchEfiVariables = true;
 
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  programs.hyprland = {
-    enable = true;
-    package = pkgs.unstable.hyprland;
-    xwayland.enable = true;
-  };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
+    services.xserver.enable = true;
+    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.displayManager.gdm.wayland = true;
+    programs.hyprland = {
+        enable = true;
+        xwayland.enable = true;
+    };
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 xdg.portal.enable = true;
 xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 xdg.portal.config.common.default = "*";
