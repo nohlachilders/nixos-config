@@ -1,4 +1,4 @@
-# main OS config
+# main OS configdcon
 {
   inputs,
   outputs,
@@ -34,8 +34,6 @@
 
             maestral
             zathura
-
-            discord
 
             krita
             obs-studio
