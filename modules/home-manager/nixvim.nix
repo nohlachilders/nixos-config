@@ -84,6 +84,14 @@
           "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(cmp_select), {'i'})";
           "<C-Space>" = "cmp.mapping(cmp.mapping.confirm({select = true}), {'i'})";
         };
+
+        settings.snippet = {
+            expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+        };
+      };
+
+      luasnip = {
+        enable = true;
       };
 
       undotree.enable = true;
