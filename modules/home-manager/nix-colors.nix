@@ -16,7 +16,7 @@
         };
         decoration = {
             rounding = 5;
-            active_opacity = 0.86;
+            active_opacity = 1.0;
             inactive_opacity = 0.75;
             blur = {
                 size = 4;
@@ -61,7 +61,7 @@
         * {
             border: none;
             border-radius: 5px;
-            font-family: FiraCode Nerd Font;
+            font-family: Fira Code;
             font-size: 12pt;
             min-height: 0px;
         }
