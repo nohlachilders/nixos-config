@@ -12,6 +12,9 @@
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
         firefox &
+        cd ~/Projects/nohl-emacs-files/
+        git pull
+        emacs &
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
