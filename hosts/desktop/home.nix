@@ -11,10 +11,11 @@
 
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
-        firefox &
         cd ~/Projects/nohl-emacs-files/
         git pull
-        emacs &
+        cd
+        emacs --no-splash &
+        firefox
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
@@ -39,6 +40,10 @@ in {
                 "DP-5,1920x1080@120,0x0,1"
                 "HDMI-A-3,1920x1080, 0x1080, 1, transform, 2" 
                 "DP-4,1440x900, 1920x-360, 1, transform, 1"
+            ];
+            windowrulev2 = [
+                "monitor DP-4,title:^(.*Emacs.*)"
+                "monitor DP-5,title:^(.*Firefox.*)"
             ];
             windowrule = [
                 "float,title:^(Picture-in-Picture)$"
