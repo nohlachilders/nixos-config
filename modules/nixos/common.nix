@@ -40,6 +40,7 @@
         w3m
         unstable.tgpt
         zip
+        unzip
 
         jq
     ];
