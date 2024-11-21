@@ -39,6 +39,7 @@
         unstable.fzf
         w3m
         unstable.tgpt
+        zip
 
         jq
     ];
