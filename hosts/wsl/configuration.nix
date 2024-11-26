@@ -18,6 +18,7 @@
   #virtualisation.virtualbox.guest.enable = true;
   wsl.enable = true;
   wsl.defaultUser = "nohlachilders";
+  wsl.startMenuLaunchers = true;
 
 
   networking.hostName = "nixos";
