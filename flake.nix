@@ -10,6 +10,8 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
+    nixos-wsl.url = "github:nix-community/nixos-wsl";
+
     nixvim.url = "github:nix-community/nixvim/nixos-24.05";
 
     emacs-overlay = {

@@ -8,9 +8,11 @@
   ...
 }: {
   imports = [
-    <nixos-wsl/modules>
+#    inputs.nixos-wsl
     outputs.nixosModules.common
     inputs.home-manager.nixosModules.home-manager
+    inputs.nixos-wsl.nixosModules.default
+    ./hardware-configuration.nix
   ];
 
   #virtualisation.virtualbox.guest.enable = true;
