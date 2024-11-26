@@ -12,6 +12,7 @@
   imports = [
     # ./nvim.nix
     outputs.homeManagerModules.common
+    outputs.homeManagerModules.emacs
   ];
 
   # Add stuff for your user as you see fit:

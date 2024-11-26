@@ -8,10 +8,10 @@
   ...
 }: {
   imports = [
-#    inputs.nixos-wsl
     outputs.nixosModules.common
     inputs.home-manager.nixosModules.home-manager
     inputs.nixos-wsl.nixosModules.default
+    outputs.nixosModules.emacs
     ./hardware-configuration.nix
   ];
 
@@ -21,6 +21,15 @@
 
 
   networking.hostName = "nixos";
+
+    fonts.packages = with pkgs;[
+        overpass
+            source-sans-pro
+            helvetica-neue-lt-std
+            fira-code
+            fira-code-nerdfont
+            font-awesome
+    ];
 
   home-manager = {
     users = {
