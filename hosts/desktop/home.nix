@@ -23,13 +23,6 @@ let
         swww img -o HDMI-A-3 ~/Dropbox/drawings/047_3.png
         swww img -o DP-5 ~/Dropbox/drawings/049.png
     '';
-    rebootScript = pkgs.pkgs.writeShellScriptBin "rebootScript" ''
-        cd ~/Projects/nohl-emacs-files/
-        git add .
-        git commit -m "Desktop auto-push: $(date)"
-        git push
-        reboot
-    '';
 in {
     # You can import other home-manager modules here
     imports = [

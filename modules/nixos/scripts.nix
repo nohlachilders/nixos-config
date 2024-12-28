@@ -9,6 +9,16 @@
 
     environment.systemPackages = with pkgs; [
         (writeShellApplication {
+        name = "rebootScript";
+        text = ''
+            cd ~/Projects/nohl-emacs-files/
+            git add .
+            git commit -m "Desktop auto-push: $(date)"
+            git push
+            reboot
+            '';
+        })
+        (writeShellApplication {
             name = "srd";
             text = ''
                 while read -r line; do
