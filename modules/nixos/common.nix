@@ -28,6 +28,14 @@
         nix-prefetch-github
 
         unstable.neovim
+        gopls
+        nil
+        lua-language-server
+        shellcheck
+        vscode-langservers-extracted
+        marksman
+        (pkgs.python3.withPackages (ps: [ ps.python-lsp-server ps.debugpy ]))
+        delve
 
         git
         lazygit

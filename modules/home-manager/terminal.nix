@@ -30,6 +30,7 @@ imports = [
         enable = true;
         plugins = [
             pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+        #pkgs.vimPlugins.nvim-lspconfig
         ];
         extraWrapperArgs = [
             "--prefix"
