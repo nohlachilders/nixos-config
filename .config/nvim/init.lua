@@ -529,7 +529,7 @@ require('lazy').setup({
         opts = {
           enabled = true,
           highlight_changed_variables = true,
-          all_references = true,
+          all_references = false,
           show_stop_reason = true,
           all_frames = true,
         }
