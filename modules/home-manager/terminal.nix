@@ -20,9 +20,24 @@ imports = [
       ]
       default_session = 'default-session'
     '';
+
+    ".config".source = ../../.config;
+    ".config".recursive = true;
   };
 
   programs = {
+    neovim = {
+        enable = true;
+        plugins = [
+            pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+        ];
+        extraWrapperArgs = [
+            "--prefix"
+            "PATH"
+            ":"
+            "${lib.makeBinPath [pkgs.gcc]}"
+        ];
+    };
     ssh.enable = true;
     ssh.extraConfig = ''
       AddKeysToAgent yes
