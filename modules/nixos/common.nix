@@ -27,6 +27,8 @@
         home-manager
         nix-prefetch-github
 
+        unstable.neovim
+
         git
         lazygit
         wget
@@ -41,6 +43,7 @@
         unstable.tgpt
         zip
         unzip
+        zig
 
         jq
     ];
@@ -80,8 +83,8 @@
     };
 
     nix = {
-        package = pkgs.nixFlakes;
-        extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
+        package = pkgs.nixVersions.stable;
+        extraOptions = lib.optionalString (config.nix.package == pkgs.nixVersions.stable)
             "experimental-features = nix-command flakes";
     };
 
@@ -91,8 +94,8 @@
 
     hardware ={
         opengl.enable = true;
-        opengl.driSupport = true;
         opengl.driSupport32Bit = true;
+        nvidia.open = false;
     };
 
     networking.networkmanager.enable = true;

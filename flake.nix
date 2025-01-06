@@ -2,17 +2,17 @@
   description = "nix time nix time";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hardware.url = "github:nixos/nixos-hardware";
 
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
-    nixvim.url = "github:nix-community/nixvim/nixos-24.05";
+    #nixvim.url = "github:nix-community/nixvim/nixos-24.05";
 
     emacs-overlay = {
         url = "github:nix-community/emacs-overlay";

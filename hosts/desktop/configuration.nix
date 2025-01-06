@@ -33,7 +33,9 @@
             unstable.kitty
 
             maestral
+
             zathura
+            dolphin
 
             krita
             obs-studio
