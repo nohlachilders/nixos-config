@@ -529,9 +529,11 @@ require('lazy').setup({
         opts = {
           enabled = true,
           highlight_changed_variables = true,
-          all_references = false,
+          all_references = true,
           show_stop_reason = true,
           all_frames = true,
+          virt_text_win_col = 50,
+          virt_text_pos = "eol",
         }
       },
 
