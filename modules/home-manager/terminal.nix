@@ -60,6 +60,7 @@ imports = [
       shellAliases = {
         vi = "nvim";
         nixme = "sudo nixos-rebuild switch --flake";
+        homeme = "home-manager switch --flake .#nohlachilders";
         ls = "ls --color=auto"; 
         lg = "lazygit";
       };

@@ -9,48 +9,48 @@
 }: {
     imports = [
         inputs.home-manager.nixosModules.home-manager
-#outputs.nixosModules.swayX
-            outputs.nixosModules.common
-            outputs.nixosModules.hyprland-nvidia-compat
-            outputs.nixosModules.emacs
-            outputs.nixosModules.cyber
-            ./hardware-configuration.nix
+        #outputs.nixosModules.swayX
+        outputs.nixosModules.common
+        outputs.nixosModules.hyprland-nvidia-compat
+        outputs.nixosModules.emacs
+        outputs.nixosModules.cyber
+        ./hardware-configuration.nix
     ];
 
     environment.systemPackages = with pkgs; [
         neofetch
 
-            unstable.hyprland
-            unstable.wofi
-            unstable.mako
-            unstable.libnotify
-            unstable.swww
-            unstable.wl-clipboard
-            unstable.cliphist
-            unstable.grim
-            unstable.slurp
-            unstable.grimblast
-            unstable.kitty
+        unstable.hyprland
+        unstable.wofi
+        unstable.mako
+        unstable.libnotify
+        unstable.swww
+        unstable.wl-clipboard
+        unstable.cliphist
+        unstable.grim
+        unstable.slurp
+        unstable.grimblast
+        unstable.kitty
 
-            maestral
+        maestral
 
-            zathura
-            dolphin
+        zathura
+        dolphin
 
-            krita
-            obs-studio
-            unstable.godot_4
-            unstable.mesa
-            chatterino2
-            ];
+        krita
+        obs-studio
+        unstable.godot_4
+        unstable.mesa
+        chatterino2
+    ];
 
     fonts.packages = with pkgs;[
         overpass
-            source-sans-pro
-            helvetica-neue-lt-std
-            fira-code
-            fira-code-nerdfont
-            font-awesome
+        source-sans-pro
+        helvetica-neue-lt-std
+        fira-code
+        fira-code-nerdfont
+        font-awesome
     ];
 
 
@@ -87,10 +87,8 @@
     };
 
     users.users = {
-# FIXME: Replace with your username
         nohlachilders = {
             isNormalUser = true;
-# TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
             extraGroups = ["networkmanager" "wheel" "audio" ];
 
             shell = pkgs.zsh;

@@ -12,8 +12,6 @@
 
     nixos-wsl.url = "github:nix-community/nixos-wsl";
 
-    #nixvim.url = "github:nix-community/nixvim/nixos-24.05";
-
     emacs-overlay = {
         url = "github:nix-community/emacs-overlay";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -78,6 +76,17 @@
         ];
       };
     };
+
+      # Available through 'home-manager --flake .#your-username@your-hostname'
+      homeConfigurations = {
+        "nohlachilders" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {inherit inputs outputs;};
+          modules = [
+            ./modules/home-manager/common.nix
+          ];
+        };
+      };
 
   };
 }
