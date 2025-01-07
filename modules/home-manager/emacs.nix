@@ -17,6 +17,7 @@
             '';
         extraPackages = epkgs: with epkgs; [
             emacsql-sqlite
+            emacsql
         ];
     };
 }
