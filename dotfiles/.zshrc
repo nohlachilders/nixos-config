@@ -60,6 +60,8 @@ bindkey '^ ' autosuggest-accept
 [ -f "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh" ] && \
     source "$HOME/.local/share/zsh/nix-zsh-completions/nix.plugin.zsh"
 
+eval "$(direnv hook zsh)"
+
 duck (){
     local search=$@
     search="''${search// /%20}"
