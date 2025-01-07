@@ -16,6 +16,7 @@ imports = [
     ".zshrc".source = config.lib.file.mkOutOfStoreSymlink /home/nohlachilders/Projects/nixos-config/dotfiles/.zshrc;
     ".config/tmux/tmux.conf".source = config.lib.file.mkOutOfStoreSymlink /home/nohlachilders/Projects/nixos-config/dotfiles/.config/tmux/tmux.conf;
 
+    ## these are not, but they dont ever need to be tweaked really
     ".local/share/zsh/zsh-autosuggestions".source = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
     ".local/share/zsh/zsh-fast-syntax-highlighting".source = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
     ".local/share/zsh/nix-zsh-completions".source = "${pkgs.nix-zsh-completions}/share/zsh/plugins/nix";
