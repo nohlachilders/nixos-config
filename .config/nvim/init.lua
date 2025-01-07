@@ -573,6 +573,13 @@ require('lazy').setup({
         desc = 'Debug: Step Out',
       },
       {
+        '<leader>6',
+        function()
+          require('dap').terminate()
+        end,
+        desc = 'Debug: Terminate',
+      },
+      {
         '<leader>b',
         function()
           require('dap').toggle_breakpoint()
