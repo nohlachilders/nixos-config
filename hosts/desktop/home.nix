@@ -11,9 +11,9 @@
 
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
-        cd ~/Projects/nohl-emacs-files/
+        pushd ~/Projects/nohl-emacs-files/
         git pull
-        cd
+        popd
         emacs --no-splash &
         firefox
     '';
