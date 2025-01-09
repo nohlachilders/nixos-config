@@ -89,7 +89,7 @@
         firefox.enable = true;
         kitty = {
             enable = true;
-            themeFile = "GruvboxMaterialDarkSoft";
+            themeFile = "gruvbox-dark";
             font = {
                 name = "Fira Code";
                 size = 12;
