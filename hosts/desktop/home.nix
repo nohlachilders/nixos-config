@@ -19,7 +19,7 @@ let
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
-        swww img -o DP-4 ~/Dropbox/drawings/048.png
+        swww img -o DP-4 ~/Dropbox/drawings/048.png --resize=no
         swww img -o HDMI-A-3 ~/Dropbox/drawings/047_3.png
         swww img -o DP-5 ~/Dropbox/drawings/049.png
     '';

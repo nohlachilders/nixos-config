@@ -10,6 +10,7 @@
 
     let
         startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+            hyprctl setcursor Quintom_Ink 24    
             ${pkgs.waybar}/bin/waybar 
             nohup ${pkgs.discord}/bin/discord
             ${pkgs.wl-clipboard}/bin/wl-paste --type text image --watch ${pkgs.cliphist}/bin/cliphist store
@@ -122,7 +123,12 @@
     home.file = {
         ".local/share/icons/Gruvbox-Plus-Dark".source = "${gruvbox-plus}/Gruvbox-Plus-Dark";
     };
-    home.pointerCursor.hyprcursor.enable = true;
+
+    home.pointerCursor = {
+        package = pkgs.quintom-cursor-theme;
+        name = "Quintom_Ink";
+    };
+
     gtk = {
         enable = true;
         theme = {
