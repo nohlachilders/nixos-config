@@ -17,7 +17,7 @@
                 pushd ~/Projects/nixos-config/
                 nvim
                 lazygit
-                nixme .#"$1"
+                sudo nixos-rebuild switch --flake .#"$1"
                 popd
             fi
             '';
