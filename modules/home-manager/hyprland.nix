@@ -122,6 +122,7 @@
     home.file = {
         ".local/share/icons/Gruvbox-Plus-Dark".source = "${gruvbox-plus}/Gruvbox-Plus-Dark";
     };
+    home.pointerCursor.hyprcursor.enable = true;
     gtk = {
         enable = true;
         theme = {
