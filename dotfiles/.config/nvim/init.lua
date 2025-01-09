@@ -667,4 +667,11 @@ require('lspconfig').marksman.setup({})
 require('lspconfig').nil_ls.setup({})
 require('lspconfig').pylsp.setup({})
 
+function fix_transparency()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+fix_transparency()
+
 -- vim: ts=2 sts=2 sw=2 et
