@@ -95,8 +95,8 @@ vim.opt.rtp = {
 
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  {                   -- Adds git related signs to the gutter, as well as utilities for managing changes
+  --'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
