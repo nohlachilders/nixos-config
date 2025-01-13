@@ -149,7 +149,7 @@ require('lazy').setup({
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>f', function()
-        builtin.find_files { hidden = true }
+        builtin.find_files { hidden = true, no_ignore = false }
       end, { desc = '[S]earch [F]iles' })
 
       vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = '[S]earch by [G]rep' })
@@ -484,6 +484,8 @@ require('lazy').setup({
 
   'mbbill/undotree',
 
+  'lucasecdb/godot-wsl-lsp',
+
   {
     'mfussenegger/nvim-dap',
     dependencies = {
@@ -660,12 +662,16 @@ require('lspconfig').gopls.setup({})
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').bashls.setup({})
 require('lspconfig').cssls.setup({})
-require('lspconfig').gdscript.setup({})
 require('lspconfig').html.setup({})
 require('lspconfig').jqls.setup({})
 require('lspconfig').marksman.setup({})
 require('lspconfig').nil_ls.setup({})
 require('lspconfig').pylsp.setup({})
+
+
+require('lspconfig').gdscript.setup({
+  cmd = { "godot-wsl-lsp" },
+})
 
 function fix_transparency()
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
