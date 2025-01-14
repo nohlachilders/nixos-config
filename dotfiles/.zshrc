@@ -67,13 +67,3 @@ duck (){
     search="''${search// /%20}"
     w3m "https://lite.duckduckgo.com/html/?q=$search";
 }
-
-flakify (){
-    if [ ! -e flake.nix ]; then
-        nix flake new -t github:nix-community/nix-direnv . 
-    elif [ ! -e .envrc ]; then
-        echo "use flake" > .envrc
-        direnv allow
-    fi
-}
-

@@ -9,6 +9,21 @@
 
     environment.systemPackages = with pkgs; [
         (writeShellApplication {
+            name = "flakify";
+            text = ''
+                if [ $# -eq 0 ]; then
+                    echo "Need flake template. use \"default\" if not sure"
+                elif [ ! -e flake.nix ]; then
+                    nix flake new -t github:nohlachilders/devflakes#"$1" .
+                fi
+
+                if [ ! -e .envrc ]; then
+                    echo "use flake . --no-pure-eval" > .envrc
+                    direnv allow
+                fi
+                '';
+        })
+        (writeShellApplication {
         name = "conf";
         text = ''
             if [ $# -eq 0 ]; then
