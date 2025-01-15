@@ -62,6 +62,8 @@ bindkey '^ ' autosuggest-accept
 
 eval "$(direnv hook zsh)"
 
+source <(fzf --zsh)
+
 duck (){
     local search=$@
     search="''${search// /%20}"
