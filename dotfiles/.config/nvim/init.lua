@@ -57,6 +57,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>x", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>c", ":e ~/.config/nvim/init.lua<Enter>")
+vim.keymap.set("n", "<leader>[", ":cprevious<Enter>")
+vim.keymap.set("n", "<leader>]", ":cnext<Enter>")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -152,7 +154,8 @@ require('lazy').setup({
         builtin.find_files { hidden = true, no_ignore = false }
       end, { desc = '[S]earch [F]iles' })
 
-      vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+      vim.keymap.set('n', '<leader>g', builtin.live_grep, { desc = 'Live Grep Search' })
+      vim.keymap.set('n', '<leader>d', builtin.diagnostics, { desc = 'Search Diagnostics' })
 
       vim.keymap.set('n', '<leader>/', function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
