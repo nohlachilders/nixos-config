@@ -57,8 +57,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>x", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>c", ":e ~/.config/nvim/init.lua<Enter>")
-vim.keymap.set("n", "<leader>[", ":cprevious<Enter>")
-vim.keymap.set("n", "<leader>]", ":cnext<Enter>")
+vim.keymap.set("n", "<M-k>", ":cprevious<Enter>")
+vim.keymap.set("n", "<M-j>", ":cnext<Enter>")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
