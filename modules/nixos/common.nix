@@ -37,6 +37,7 @@
         (pkgs.python3.withPackages (ps: [ ps.python-lsp-server ps.debugpy ]))
         delve
         unstable.devenv
+        nodejs
 
         git
         lazygit

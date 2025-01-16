@@ -628,6 +628,7 @@ require('lazy').setup({
       require('dap-python').setup()
     end,
   },
+  "github/copilot.vim",
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
