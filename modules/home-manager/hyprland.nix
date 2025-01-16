@@ -95,6 +95,11 @@
                 name = "Fira Code";
                 size = 12;
             };
+            settings = {
+                cursor_trail = 5;
+                background_opacity = 0.8;
+                background_blur = 20;
+            };
         };
         waybar.enable = true;
         lf = {
