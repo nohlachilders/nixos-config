@@ -628,7 +628,21 @@ require('lazy').setup({
       require('dap-python').setup()
     end,
   },
-  "github/copilot.vim",
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup()
+    end,
+    suggestion = {
+      auto_trigger = false,
+      keymap = {
+        accept = "<M-Space>",
+      }
+    }
+  }
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
