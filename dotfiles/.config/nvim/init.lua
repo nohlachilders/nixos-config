@@ -98,19 +98,6 @@ vim.opt.rtp = {
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
   --'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -207,6 +194,9 @@ require('lazy').setup({
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
           map('vh', vim.lsp.buf.hover, '[V]iew [H]over')
+          map('vd', vim.diagnostic.show, '[V]iew [D]iagnostics')
+
+          vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help)
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -408,6 +398,12 @@ require('lazy').setup({
           { name = 'path' },
         },
       }
+      vim.api.nvim_create_autocmd('TextChangedI', {
+        once = true,
+        callback = function()
+          cmp.abort()
+        end,
+      })
     end,
   },
 
@@ -650,11 +646,21 @@ require('lazy').setup({
     event = "InsertEnter",
     config = function()
       require("copilot").setup()
+      local suggestion = require("copilot.suggestion")
+      vim.keymap.set('i', '<C-M-Space>', function()
+        if suggestion.is_visible() then
+          suggestion.accept()
+        else
+          suggestion.next()
+        end
+      end)
+      vim.api.nvim_create_autocmd('TextChangedI', { callback = suggestion.dismiss })
     end,
     suggestion = {
       auto_trigger = false,
       keymap = {
-        accept = "<M-Space>",
+        next = "<C-M-n>",
+        prev = "<C-M-p>",
       }
     }
   }
