@@ -366,15 +366,9 @@ require('lazy').setup({
         mapping = cmp.mapping.preset.insert {
           -- Select the [n]ext item
           ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-Space>'] = function()
-            if not cmp.visible() then
-              cmp.complete()
-            else
-              cmp.mapping.confirm { select = true }
-            end
-          end,
           -- Select the [p]revious item
           ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-k>'] = cmp.mapping.abort(),
 
           -- Scroll the documentation window [b]ack / [f]orward
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -384,6 +378,17 @@ require('lazy').setup({
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           --['<C-Space>'] = cmp.mapping.confirm { select = true },
+          ['<C-Space>'] = cmp.mapping(function(fallback)
+            if not cmp.visible() then
+              cmp.complete()
+            elseif luasnip.expandable() then
+              luasnip.expand()
+            elseif cmp.visible() then
+              cmp.confirm { select = true }
+            else
+              fallback()
+            end
+          end),
 
           ['<C-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
@@ -638,7 +643,7 @@ require('lazy').setup({
       require('dap-python').setup()
     end,
   },
-  --"github/copilot.vim"
+  --"github/copilot.vim",
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
