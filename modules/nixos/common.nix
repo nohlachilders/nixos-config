@@ -54,6 +54,7 @@
         zip
         unzip
         zig
+        bat
 
         jq
     ];

@@ -53,7 +53,7 @@
             name = "ai";
             text = ''
                 search=$*
-                tgpt -w "answer the following prompt as concisely as possible: $search"
+                tgpt -w "answer the following prompt as concisely as possible: $search" | ${pkgs.bat}/bin/bat --paging=never -l markdown --style="plain" --theme=gruvbox-dark
             '';
         })
 
