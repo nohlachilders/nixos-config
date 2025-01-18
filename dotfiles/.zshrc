@@ -7,7 +7,7 @@ alias lg="lazygit";
 
 alias source ~/.env
 bindkey -v
-bindkey -M viins jk vi-cmd-mode
+# bindkey -M viins jk vi-cmd-mode
 bindkey -M viins "^P" up-line-or-history
 bindkey -M viins "^N" down-line-or-history
 export VISUAL=nvim
