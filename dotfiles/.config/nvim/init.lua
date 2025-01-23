@@ -663,7 +663,14 @@ require('lazy').setup({
         prev = "<C-M-p>",
       }
     }
-  }
+  },
+  {
+    "kwakzalver/duckytype.nvim",
+    config = function()
+      require('duckytype').setup {
+      }
+    end,
+  },
   --- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
