@@ -56,6 +56,17 @@
                 tgpt -w "answer the following prompt as concisely as possible: $search" | ${pkgs.bat}/bin/bat --paging=never -l markdown --style="plain" --theme=gruvbox-dark
             '';
         })
+        (writeShellApplication {
+            name = "ds";
+            text = ''
+                search=$*
+                if [ $# -eq 0 ]; then
+                    ollama run deepseek-r1:8b
+                else
+                    ollama run deepseek-r1:8b "answer the following prompt as concisely as possible: $search" | ${pkgs.bat}/bin/bat --paging=never -l markdown --style="plain" --theme=gruvbox-dark
+                fi
+            '';
+        })
 
         (writeShellApplication {
             name = "chunk";

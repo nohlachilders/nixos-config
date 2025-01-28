@@ -42,6 +42,7 @@
         unstable.godot_4
         unstable.mesa
         chatterino2
+
     ];
 
     fonts.packages = with pkgs;[
@@ -53,6 +54,10 @@
         font-awesome
     ];
 
+    services.ollama = {
+        enable = true;
+        acceleration = "cuda";
+    };
 
     boot.loader.grub= {
         enable = true;
