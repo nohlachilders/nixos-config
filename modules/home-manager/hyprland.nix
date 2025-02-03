@@ -117,7 +117,7 @@
             provider = "manual";
             latitude = 32.79294;
             longitude = -117.159;
-            temperature.night = 2300;
+            temperature.night = 2100;
             tray = true;
         };
         mako.enable = true;
