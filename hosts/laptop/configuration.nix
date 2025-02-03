@@ -51,6 +51,9 @@ pkgs,
         font-awesome
     ];
 
+    services.ollama = {
+        enable = true;
+    };
 
     boot.loader.grub= {
         enable = true;
