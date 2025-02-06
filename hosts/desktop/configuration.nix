@@ -54,6 +54,8 @@
         font-awesome
     ];
 
+    virtualisation.docker.enable = true;
+
     services.ollama = {
         enable = true;
         acceleration = "cuda";
@@ -64,7 +66,6 @@
         useOSProber = true;
     };
 
-#virtualisation.virtualbox.guest.enable = true;
     boot.loader.grub.device = "/dev/sda";
 
     services.xserver.enable = true;
@@ -94,7 +95,7 @@
     users.users = {
         nohlachilders = {
             isNormalUser = true;
-            extraGroups = ["networkmanager" "wheel" "audio" ];
+            extraGroups = ["networkmanager" "wheel" "audio" "docker" ];
 
             shell = pkgs.zsh;
         };
