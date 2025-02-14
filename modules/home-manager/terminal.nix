@@ -49,7 +49,7 @@ imports = [
 
     git = {
       enable = true;
-      userEmail = "nohlachilders@github.com";
+      userEmail = "nohlachilders@gmail.com";
       userName = "Nohl Childers";
       extraConfig = {
         push.default = "upstream";
