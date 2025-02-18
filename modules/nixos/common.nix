@@ -65,6 +65,8 @@
         unstable.go
     ];
 
+    services.envfs.enable = true;
+
     security.polkit.enable = true;
 
     programs.zsh.enable = true;
