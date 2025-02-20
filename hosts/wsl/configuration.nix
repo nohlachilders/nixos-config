@@ -19,6 +19,7 @@ pkgs,
     wsl.enable = true;
     wsl.defaultUser = "nohlachilders";
     wsl.startMenuLaunchers = true;
+    virtualisation.docker.enable = true;
 
 
     networking.hostName = "nixos";
@@ -52,7 +53,7 @@ pkgs,
         nohlachilders = {
             isNormalUser = true;
             # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-            extraGroups = ["networkmanager" "wheel" ];
+            extraGroups = ["networkmanager" "wheel" "docker"];
 
             shell = pkgs.zsh;
         };
