@@ -56,10 +56,10 @@
 
     virtualisation.docker.enable = true;
 
-    services.ollama = {
-        enable = true;
-        acceleration = "cuda";
-    };
+    #    services.ollama = {
+    #        enable = true;
+    #        acceleration = "cuda";
+    #    };
 
     boot.loader.grub= {
         enable = true;
