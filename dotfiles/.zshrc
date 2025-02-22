@@ -69,3 +69,6 @@ duck (){
     search="''${search// /%20}"
     w3m "https://lite.duckduckgo.com/html/?q=$search";
 }
+
+# Turso
+export PATH="$PATH:/home/nohlachilders/.turso"
