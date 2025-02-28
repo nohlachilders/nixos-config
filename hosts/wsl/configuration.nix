@@ -25,7 +25,7 @@ pkgs,
     networking.hostName = "nixos";
 
     environment.systemPackages = with pkgs; [
-        firefox
+        librewolf
     ];
 
     fonts.packages = with pkgs;[

@@ -11,7 +11,7 @@
 
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
-        firefox &
+        librewolf &
         discord &
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
