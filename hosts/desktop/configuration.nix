@@ -43,6 +43,7 @@
         unstable.mesa
         chatterino2
 
+        discord
     ];
 
     fonts.packages = with pkgs;[
