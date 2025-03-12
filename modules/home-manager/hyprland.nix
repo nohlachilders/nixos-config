@@ -87,7 +87,7 @@
 
     programs = {
         zathura.enable = true;
-        librewolf.enable = true;
+        firefox.enable = true;
         kitty = {
             enable = true;
             themeFile = "gruvbox-dark";

@@ -15,7 +15,7 @@ let
         git pull
         popd
         emacs --no-splash &
-        librewolf
+        firefox
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww init
