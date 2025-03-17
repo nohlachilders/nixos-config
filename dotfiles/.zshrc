@@ -10,6 +10,9 @@ bindkey -v
 # bindkey -M viins jk vi-cmd-mode
 bindkey -M viins "^P" up-line-or-history
 bindkey -M viins "^N" down-line-or-history
+bindkey "^W" backward-kill-word 
+bindkey "^H" backward-delete-char 
+bindkey "^U" backward-kill-line  
 export VISUAL=nvim
 # Remove mode switching delay.
 KEYTIMEOUT=10

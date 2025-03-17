@@ -713,6 +713,7 @@ require('lspconfig').jqls.setup({})
 require('lspconfig').marksman.setup({})
 require('lspconfig').nil_ls.setup({})
 require('lspconfig').pylsp.setup({})
+require('lspconfig').rust_analyzer.setup({})
 
 
 require('lspconfig').gdscript.setup({
