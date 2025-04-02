@@ -37,10 +37,6 @@ pkgs,
         font-awesome
     ];
 
-    services.ollama = {
-        enable = true;
-    };
-
     home-manager = {
         users = {
             # Import your home-manager configuration
