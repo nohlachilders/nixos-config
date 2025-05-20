@@ -36,6 +36,7 @@
 
         zathura
         dolphin
+        kdePackages.qtsvg
 
         krita
         obs-studio
