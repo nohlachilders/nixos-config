@@ -36,6 +36,7 @@
         marksman
         (pkgs.python3.withPackages (ps: [ ps.python-lsp-server ps.debugpy ]))
         delve
+        htmx-lsp
         unstable.devenv
         nodejs
 
