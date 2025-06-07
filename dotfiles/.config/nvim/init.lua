@@ -344,6 +344,7 @@ require('lazy').setup({
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+      luasnip.filetype_extend("templ", { "html" })
 
       cmp.setup {
         snippet = {
@@ -711,11 +712,18 @@ require('lspconfig').gopls.setup({})
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').bashls.setup({})
 require('lspconfig').cssls.setup({})
-require('lspconfig').html.setup({})
 require('lspconfig').jqls.setup({})
 require('lspconfig').marksman.setup({})
 require('lspconfig').nil_ls.setup({})
 require('lspconfig').pylsp.setup({})
+require('lspconfig').templ.setup({})
+require('lspconfig').html.setup({
+  filetypes = { "html", "templ" },
+})
+require('lspconfig').htmx.setup({
+  filetypes = { "html", "templ" },
+})
+
 
 
 require('lspconfig').gdscript.setup({
