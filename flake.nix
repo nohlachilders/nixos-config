@@ -63,10 +63,10 @@
           ./hosts/hypervisor/configuration.nix
         ];
       };
-      laptop = nixpkgs.lib.nixosSystem {
+      thinkpad = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/laptop/configuration.nix
+          ./hosts/thinkpad/configuration.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
@@ -75,6 +75,12 @@
           ./hosts/desktop/configuration.nix
         ];
       };
+#      laptop = nixpkgs.lib.nixosSystem {
+#        specialArgs = {inherit inputs outputs;};
+#        modules = [
+#          ./hosts/laptop/configuration.nix
+#        ];
+#      };
     };
 
       # Available through 'home-manager --flake .#your-username@your-hostname'
