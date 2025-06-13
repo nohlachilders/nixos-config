@@ -58,6 +58,8 @@
         bat
 
         jq
+
+        google-cloud-sdk
     ];
 
     programs.nix-ld.enable = true;
