@@ -61,6 +61,8 @@ pkgs,
     boot.loader.grub.efiSupport = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    boot.initrd.luks.devices."luks-7be413cd-082b-457b-be14-7115810f4ce1".device = "/dev/disk/by-uuid/7be413cd-082b-457b-be14-7115810f4ce1";
+
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.gdm.wayland = true;
