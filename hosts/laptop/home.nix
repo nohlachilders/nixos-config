@@ -28,11 +28,10 @@ in {
     wayland.windowManager.hyprland = {
         settings = {
             exec-once = [
-                ''${wallpaperScript}/bin/wallpaper'' 
                 ''${workspaceScript}/bin/workspace''
+                ''${wallpaperScript}/bin/wallpaper'' 
             ]; 
             monitor = [
-                "eDP-1,1920x1080,0x0,1"
             ];
             windowrule = [
                 "float,title:^(Picture-in-Picture)$"
