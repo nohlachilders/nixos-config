@@ -15,9 +15,9 @@
             (setq inhibit-startup-screen t)
             (load-file "~/Projects/nohl-emacs-files/dotfiles/init.el")
             '';
-        extraPackages = epkgs: with epkgs; [
-            emacsql-sqlite
-            emacsql
-        ];
-    };
+        #        extraPackages = epkgs: with epkgs; [
+        #            emacsql-sqlite
+        #            emacsql
+        #        ];
+           };
 }

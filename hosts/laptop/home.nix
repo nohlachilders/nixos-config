@@ -15,8 +15,8 @@ let
         discord &
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
-        swww init
-        swww img ~/Dropbox/drawings/face2.png
+        swww-daemon &
+        swww img ~/Dropbox/drawings/049.png
     '';
 in {
     # You can import other home-manager modules here

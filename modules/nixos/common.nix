@@ -17,6 +17,7 @@
             outputs.overlays.additions
             outputs.overlays.modifications
             outputs.overlays.unstable-packages
+            outputs.overlays.previous-stable-packages
         ];
         config = {
             allowUnfree = true;
@@ -26,6 +27,7 @@
     environment.systemPackages = with pkgs; [
         home-manager
         nix-prefetch-github
+        nh
 
         unstable.neovim
         gopls

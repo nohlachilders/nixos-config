@@ -36,7 +36,7 @@
         maestral
 
         zathura
-        dolphin
+        kdePackages.dolphin
         kdePackages.qtsvg
 
         krita

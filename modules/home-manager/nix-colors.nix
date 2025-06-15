@@ -27,13 +27,14 @@
     };
 
     services.mako = with config.colorScheme.palette; {
-        backgroundColor = "#${base00}";
-        borderColor = "#${base0A}";
-        borderRadius = 5;
-        borderSize = 2;
-        textColor = "#${base04}";
-        layer = "overlay";
-        font = "Fira Code 14";
+        settings.backgroundColor = "#${base00}";
+        settings.borderColor = "#${base0A}";
+        settings.borderRadius = 5;
+        settings.borderSize = 2;
+        settings.textColor = "#${base04}";
+        settings.layer = "overlay";
+        settings.font = "Fira Code 14";
+        settings.default-timeout = 4000;
     };
 
     programs.zathura = with config.colorScheme.palette; {

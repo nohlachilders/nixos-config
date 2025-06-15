@@ -16,7 +16,7 @@
             ${pkgs.wl-clipboard}/bin/wl-paste --type text image --watch ${pkgs.cliphist}/bin/cliphist store
             #${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store
         '';
-        gruvbox-plus = import ./etc/gruvbox-plus.nix {inherit pkgs; };
+    # gruvbox-plus = import ./etc/gruvbox-plus.nix {inherit pkgs; };
     in {
 
     imports = [
@@ -128,7 +128,7 @@
     fonts.fontconfig.enable = true;
 
     home.file = {
-        ".local/share/icons/Gruvbox-Plus-Dark".source = "${gruvbox-plus}/Gruvbox-Plus-Dark";
+        ".local/share/icons/Gruvbox-Plus-Dark".source = "${pkgs.gruvbox-plus-icons}/Gruvbox-Plus-Dark";
     };
 
     home.pointerCursor = {
@@ -148,7 +148,7 @@
         };
         font.name = "Overpass";
         font.size = 14;
-        iconTheme.package = gruvbox-plus;
+        iconTheme.package = pkgs.gruvbox-plus-icons;
         iconTheme.name = "Gruvbox-Plus-Dark";
     };
 

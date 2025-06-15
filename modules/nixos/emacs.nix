@@ -12,6 +12,8 @@
 
     environment.systemPackages = with pkgs; [
         unstable.texliveMedium
+        previous.emacsPackages.emacsql
+        previous.emacsPackages.emacsql-sqlite
     ];
 
 }
