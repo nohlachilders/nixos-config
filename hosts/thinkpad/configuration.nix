@@ -31,6 +31,7 @@ pkgs,
         unstable.slurp
         unstable.grimblast
         unstable.kitty
+        wayland-logout
 
         maestral
         zathura

@@ -15,8 +15,8 @@ let
         discord &
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
-        swww init
-        swww img ~/Dropbox/drawings/face2.png
+        swww-daemon &
+        swww img ~/Dropbox/drawings/049.png
     '';
 in {
     # You can import other home-manager modules here
@@ -28,8 +28,8 @@ in {
     wayland.windowManager.hyprland = {
         settings = {
             exec-once = [
-                ''${wallpaperScript}/bin/wallpaper'' 
                 ''${workspaceScript}/bin/workspace''
+                ''${wallpaperScript}/bin/wallpaper'' 
             ]; 
             monitor = [
                 "eDP-1,1920x1080,0x0,1"
