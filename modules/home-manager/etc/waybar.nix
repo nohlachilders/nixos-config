@@ -25,6 +25,11 @@
                 format = " {percent}%"; 
             };
 
+            "backlight/slider" = {
+                "min" = 1;
+                "max" = 100;
+            };
+
             "clock" = {
                 format = " {:%I:%M}";
             };
