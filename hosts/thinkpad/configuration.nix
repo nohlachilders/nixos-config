@@ -11,7 +11,7 @@ pkgs,
         inputs.home-manager.nixosModules.home-manager
         #outputs.nixosModules.swayX
         outputs.nixosModules.common
-        outputs.nixosModules.hyprland-nvidia-compat
+        #outputs.nixosModules.hyprland-nvidia-compat
         outputs.nixosModules.emacs
         outputs.nixosModules.cyber
         ./hardware-configuration.nix
@@ -40,6 +40,8 @@ pkgs,
         zap
 
         acpi
+
+        sbctl
     ];
 
     fonts.packages = with pkgs;[
@@ -58,7 +60,6 @@ pkgs,
     boot.loader.grub.device = "nodev";
     boot.loader.grub.efiSupport = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
 
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
