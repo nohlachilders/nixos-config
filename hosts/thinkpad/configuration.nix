@@ -20,6 +20,8 @@ pkgs,
     environment.systemPackages = with pkgs; [
         neofetch
 
+        dolphin
+
         unstable.hyprland
         unstable.wofi
         unstable.mako
@@ -38,8 +40,6 @@ pkgs,
 
         discord
 
-        zap
-
         acpi
 
         sbctl
@@ -53,6 +53,13 @@ pkgs,
         fira-code-nerdfont
         font-awesome
     ];
+
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = true;
+    };
+    services.blueman.enable = true;
+
     boot.loader.grub= {
         enable = true;
         useOSProber = true;
