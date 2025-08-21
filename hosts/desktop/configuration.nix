@@ -9,7 +9,7 @@
 }: {
     imports = [
         inputs.home-manager.nixosModules.home-manager
-        #outputs.nixosModules.swayX
+
         outputs.nixosModules.common
         outputs.nixosModules.hyprland-nvidia-compat
         outputs.nixosModules.emacs
@@ -55,6 +55,7 @@
         fira-code-nerdfont
         font-awesome
     ];
+
 
     virtualisation.docker.enable = true;
 

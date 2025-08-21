@@ -152,5 +152,10 @@
         iconTheme.name = "Gruvbox-Plus-Dark";
     };
 
+    qt = {
+        enable = true;
+        platformTheme.name = "gtk";
+    };
+
     }
 
