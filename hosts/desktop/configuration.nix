@@ -18,7 +18,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
-        discord
+        #discord
         neofetch
 
         unstable.hyprland

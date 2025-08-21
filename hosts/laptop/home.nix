@@ -12,7 +12,7 @@
 let
     workspaceScript = pkgs.pkgs.writeShellScriptBin "workspace" ''
         firefox &
-        discord &
+        #discord &
     '';
     wallpaperScript = pkgs.pkgs.writeShellScriptBin "wallpaper" ''
         swww-daemon &

@@ -38,7 +38,7 @@ pkgs,
         maestral
         zathura
 
-        discord
+        #discord
 
         acpi
 

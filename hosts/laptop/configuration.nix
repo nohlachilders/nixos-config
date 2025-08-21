@@ -35,7 +35,7 @@ pkgs,
         maestral
         zathura
 
-        discord
+        #discord
 
         zap
 

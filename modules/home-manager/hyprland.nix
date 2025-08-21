@@ -12,7 +12,7 @@
         startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
             hyprctl setcursor Quintom_Ink 24    
             ${pkgs.waybar}/bin/waybar 
-            nohup ${pkgs.discord}/bin/discord
+            #nohup ${pkgs.discord}/bin/discord
             ${pkgs.wl-clipboard}/bin/wl-paste --type text image --watch ${pkgs.cliphist}/bin/cliphist store
             #${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store
         '';
