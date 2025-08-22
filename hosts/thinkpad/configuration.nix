@@ -20,8 +20,6 @@ pkgs,
     environment.systemPackages = with pkgs; [
         neofetch
 
-        dolphin
-
         unstable.hyprland
         unstable.wofi
         unstable.mako
@@ -36,7 +34,10 @@ pkgs,
         wayland-logout
 
         maestral
+
         zathura
+        kdePackages.dolphin
+        kdePackages.qtsvg
 
         #discord
 
