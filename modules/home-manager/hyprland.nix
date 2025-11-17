@@ -137,7 +137,7 @@
     };
 
     gtk = {
-        enable = true;
+        enable = false;
         theme = {
             #name = "adw-gtk3";
             #package = pkgs.adw-gtk3;
@@ -153,7 +153,7 @@
     };
 
     qt = {
-        enable = true;
+        enable = false;
         platformTheme.name = "gtk";
     };
 
