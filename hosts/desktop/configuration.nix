@@ -19,7 +19,6 @@
 
     environment.systemPackages = with pkgs; [
         #discord
-        neofetch
 
         unstable.hyprland
         unstable.wofi
@@ -52,7 +51,7 @@
         source-sans-pro
         helvetica-neue-lt-std
         fira-code
-        fira-code-nerdfont
+        nerd-fonts.fira-code
         font-awesome
     ];
 

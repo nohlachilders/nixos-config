@@ -18,7 +18,6 @@ pkgs,
     ];
 
     environment.systemPackages = with pkgs; [
-        neofetch
 
         unstable.hyprland
         unstable.wofi
@@ -51,7 +50,7 @@ pkgs,
         source-sans-pro
         helvetica-neue-lt-std
         fira-code
-        fira-code-nerdfont
+        nerd-fonts.fira-code
         font-awesome
     ];
 
@@ -73,8 +72,7 @@ pkgs,
     boot.initrd.luks.devices."luks-7be413cd-082b-457b-be14-7115810f4ce1".device = "/dev/disk/by-uuid/7be413cd-082b-457b-be14-7115810f4ce1";
 
     services.xserver.enable = true;
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.displayManager.gdm.wayland = true;
+    services.displayManager.ly.enable = true;
     programs.hyprland = {
         enable = true;
         xwayland.enable = true;

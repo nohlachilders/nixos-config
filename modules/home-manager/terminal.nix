@@ -30,9 +30,10 @@ imports = [
 
   programs = {
     neovim = {
-        enable = true;
+        withRuby = false;
+        withPython3 = true;
+        enable = false;
         plugins = [
-            pkgs.vimPlugins.nvim-treesitter.withAllGrammars
         #pkgs.vimPlugins.nvim-lspconfig
         ];
         extraWrapperArgs = [

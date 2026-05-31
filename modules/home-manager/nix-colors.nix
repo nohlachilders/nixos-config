@@ -6,22 +6,25 @@
 
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
-    wayland.windowManager.hyprland.settings = {
-        general = with config.colorScheme.palette; {
-            gaps_in = 2;
-            gaps_out = 2;
-            border_size = 2;
-            "col.active_border" = "rgb(${base0A})";
-            "col.inactive_border" = "rgb(${base01})";
-        };
-        decoration = {
-            rounding = 5;
-            active_opacity = 1.0;
-            inactive_opacity = 0.75;
-            blur = {
-                size = 4;
-                noise = .15;
-                passes = 3;
+    wayland.windowManager.hyprland = {
+        configType = "hyprlang";
+        settings = {
+            general = with config.colorScheme.palette; {
+                gaps_in = 2;
+                gaps_out = 2;
+                border_size = 2;
+                "col.active_border" = "rgb(${base0A})";
+                "col.inactive_border" = "rgb(${base01})";
+            };
+            decoration = {
+                rounding = 5;
+                active_opacity = 1.0;
+                inactive_opacity = 0.75;
+                blur = {
+                    size = 4;
+                    noise = .15;
+                    passes = 3;
+                };
             };
         };
     };

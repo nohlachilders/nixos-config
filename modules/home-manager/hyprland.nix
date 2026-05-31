@@ -150,6 +150,8 @@
         font.size = 14;
         iconTheme.package = pkgs.gruvbox-plus-icons;
         iconTheme.name = "Gruvbox-Plus-Dark";
+
+        gtk4.theme = config.gtk.theme;
     };
 
     qt = {

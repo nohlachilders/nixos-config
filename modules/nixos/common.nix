@@ -30,6 +30,7 @@
         nh
 
         unstable.neovim
+        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
         gopls
         nil
         lua-language-server
