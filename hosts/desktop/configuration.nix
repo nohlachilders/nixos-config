@@ -6,108 +6,113 @@
   config,
   pkgs,
   ...
-}: {
-    imports = [
-        inputs.home-manager.nixosModules.home-manager
+}:
+{
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
 
-        outputs.nixosModules.common
-        outputs.nixosModules.hyprland-nvidia-compat
-        outputs.nixosModules.emacs
-        outputs.nixosModules.cyber
-        ./hardware-configuration.nix
-    ];
+    outputs.nixosModules.common
+    outputs.nixosModules.hyprland-nvidia-compat
+    outputs.nixosModules.emacs
+    outputs.nixosModules.cyber
+    ./hardware-configuration.nix
+  ];
 
-    environment.systemPackages = with pkgs; [
-        #discord
+  environment.systemPackages = with pkgs; [
+    #discord
 
-        unstable.hyprland
-        unstable.wofi
-        unstable.mako
-        unstable.libnotify
-        unstable.swww
-        unstable.wl-clipboard
-        unstable.cliphist
-        unstable.grim
-        unstable.slurp
-        unstable.grimblast
-        unstable.kitty
+    unstable.hyprland
+    unstable.wofi
+    unstable.mako
+    unstable.libnotify
+    unstable.swww
+    unstable.wl-clipboard
+    unstable.cliphist
+    unstable.grim
+    unstable.slurp
+    unstable.grimblast
+    unstable.kitty
 
-        maestral
+    maestral
 
-        zathura
-        kdePackages.dolphin
-        kdePackages.qtsvg
+    zathura
+    zathuraPkgs.zathura_pdf_mupdf
+    kdePackages.dolphin
+    kdePackages.qtsvg
 
-        krita
-        obs-studio
-        unstable.godot_4
-        unstable.mesa
-        chatterino2
+    krita
+    obs-studio
+    unstable.godot_4
+    unstable.mesa
+    chatterino2
 
-    ];
+  ];
 
-    fonts.packages = with pkgs;[
-        overpass
-        source-sans-pro
-        helvetica-neue-lt-std
-        fira-code
-        nerd-fonts.fira-code
-        font-awesome
-    ];
+  fonts.packages = with pkgs; [
+    overpass
+    source-sans-pro
+    helvetica-neue-lt-std
+    fira-code
+    nerd-fonts.fira-code
+    font-awesome
+  ];
 
+  virtualisation.docker.enable = true;
 
-    virtualisation.docker.enable = true;
+  #    services.ollama = {
+  #        enable = true;
+  #        acceleration = "cuda";
+  #    };
 
-    #    services.ollama = {
-    #        enable = true;
-    #        acceleration = "cuda";
-    #    };
+  boot.loader.grub = {
+    enable = true;
+    useOSProber = true;
+  };
 
-    boot.loader.grub= {
-        enable = true;
-        useOSProber = true;
+  boot.loader.grub.device = "/dev/sda";
+
+  services.xserver.enable = true;
+
+  #    services.xserver.displayManager.gdm.enable = true;
+  #    services.xserver.displayManager.gdm.wayland = true;
+
+  services.displayManager.cosmic-greeter.enable = true;
+  services.desktopManager.cosmic.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "*";
+
+  networking.hostName = "nixos";
+
+  hardware.opentabletdriver.enable = true;
+
+  home-manager = {
+    backupFileExtension = "backup";
+    users = {
+      # Import your home-manager configuration
+      nohlachilders = import ./home.nix;
     };
+  };
 
-    boot.loader.grub.device = "/dev/sda";
+  users.users = {
+    nohlachilders = {
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "audio"
+        "docker"
+      ];
 
-    services.xserver.enable = true;
-
-    #    services.xserver.displayManager.gdm.enable = true;
-    #    services.xserver.displayManager.gdm.wayland = true;
-
-    services.displayManager.cosmic-greeter.enable = true;
-    services.desktopManager.cosmic.enable = true;
-
-    programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
+      shell = pkgs.zsh;
     };
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    xdg.portal.config.common.default = "*";
-
-    networking.hostName = "nixos";
-
-    hardware.opentabletdriver.enable = true;
-
-    home-manager = {
-        backupFileExtension = "backup";
-        users = {
-# Import your home-manager configuration
-            nohlachilders = import ./home.nix;
-        };
-    };
-
-    users.users = {
-        nohlachilders = {
-            isNormalUser = true;
-            extraGroups = ["networkmanager" "wheel" "audio" "docker" ];
-
-            shell = pkgs.zsh;
-        };
-    };
-
+  };
 
 }
