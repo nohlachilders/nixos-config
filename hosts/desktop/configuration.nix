@@ -72,13 +72,7 @@
   boot.loader.grub.device = "/dev/sda";
 
   services.xserver.enable = true;
-
-  #    services.xserver.displayManager.gdm.enable = true;
-  #    services.xserver.displayManager.gdm.wayland = true;
-
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
-
+  services.displayManager.ly.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
