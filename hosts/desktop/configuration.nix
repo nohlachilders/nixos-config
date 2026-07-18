@@ -79,6 +79,10 @@
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+    boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_580 ];
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "*";
